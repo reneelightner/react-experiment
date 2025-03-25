@@ -2,6 +2,8 @@ import React from 'react';
 import * as d3 from 'd3';
 import { useD3 } from './useD3.js';
 
+// props
+// id, height, data, artist, awards
 export default function Chart(props) {
 
     const ref = useD3(
