@@ -8,5 +8,6 @@ export const useD3 = (renderChartFn, dependencies) => {
         renderChartFn(d3.select(ref.current));
         return () => {};
       }, dependencies);
+      
     return ref;
 }

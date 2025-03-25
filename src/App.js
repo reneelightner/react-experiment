@@ -1,11 +1,29 @@
 import React, {useState} from 'react'
 import Buttonset from './Components/Buttonset';
-import Component1 from './Components/Component1';
-import Component2 from './Components/Component2';
 import Component3 from './Components/Component3';
+import Scatterplot from './Components/Scatterplot';
+import HorizontalBar from './Components/HorizontalBar';
+import * as d3 from 'd3';
 
+// DATA
+import scatterplotJSON from './data/dataScatterplot.json';
+import horizontalbarJSON from './data/dataBarChartHorizontal.json';
+
+// HELPER FUNCTIONS
+// find unique for arr of objects (returns arr of unique items)
+const findUnique = (arr, key) => {
+  const unique = arr.reduce((a,c) => {
+      if (!a.includes(c[key])) {
+          a.push(c[key])
+      }
+      return a
+  }, [])
+  return unique
+}
+
+// APP COMPONENT
 function App() {
-  // BUTTON
+  // BUTTON GROUP
   // map of btn key to component
   const componentBtnMap = {
     "option1" : "Component 1",
@@ -13,27 +31,48 @@ function App() {
     "option3" : "Component 3"
   }
   const defaultBtnSelected = "option1"
-
   const [componentSelected, setcomponentSelected] = useState(componentBtnMap[defaultBtnSelected])
-
   const btnData = [
-    {label: "Option 1", key: "option1"},
-    {label: "Option 2", key: "option2"},
+    {label: "Scatterplot", key: "option1"},
+    {label: "Horizontal Bar Chart", key: "option2"},
     {label: "Option 3", key: "option3"}
   ]
-
   const handleBtnSelection = (btnSelectedKey) => {
     setcomponentSelected(componentBtnMap[btnSelectedKey])
   }
-  // END BUTTON
+
+  // SCATTERPLOT
+  // clean up data for chart, parse each YEAR, return formattedData
+  const parseTime = d3.timeParse("%Y")
+  const formattedData = scatterplotJSON.map(d => {
+      const newObj = {...d} // shallow copy to avoid modifying the original object
+      newObj.YEAR = parseTime(d.YEAR)
+      return newObj
+  })
+  // use formattedData to find x and y domains
+  // arr of unique awards for y axis domain
+  const ydomain = findUnique(formattedData, 'AWARD')
+  // min and max year for x axis domain
+  const xdomain = d3.extent(formattedData, d => d.YEAR)
+  const scatterplotmargin = {top: 1, right: 15, bottom: 20, left: 20}
 
   return (
     <div className="container">
-      <p className={"label"}>Choose an option:</p>
+      <p className={"label"}>Choose a chart type:</p>
       <Buttonset btnData={btnData} defaultSelection={defaultBtnSelected} onSelect={handleBtnSelection} /> 
-      <div className="componentWrapper">
-        {componentSelected === "Component 1" && <Component1 />}
-        {componentSelected === "Component 2" && <Component2 />}
+      <div className="componentWrapper row">
+        <div className='col-8'>
+          {
+            componentSelected === "Component 1" && 
+            <>
+              <p>Scatterplot</p>
+              <Scatterplot data={formattedData} id={'scatterplot'} height={200} ydomain={ydomain} ykey={'AWARD'} xdomain={xdomain} xkey={'YEAR'} ttkey={'ARTIST'} margin={scatterplotmargin} />
+            </>
+          }
+        </div>
+        <div className='col-6'>
+          {componentSelected === "Component 2" && <HorizontalBar id={'horizontalbar'} height={200} />}
+        </div>
         {componentSelected === "Component 3" && <Component3 />}
       </div>
     </div>
