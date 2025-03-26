@@ -1,1 +1,1282 @@
-[{"YEAR":"2021","ARTIST":"Silk Sonic (Bruno Mars, Anderson .Paak)","AWARD":"A"},{"YEAR":"2021","ARTIST":"Jon Batiste","AWARD":"B"},{"YEAR":"2021","ARTIST":"Silk Sonic (Bruno Mars, Anderson .Paak)","AWARD":"C"},{"YEAR":"2021","ARTIST":"Olivia Rodrigo","AWARD":"D"},{"YEAR":"2020","ARTIST":"Billie Eilish","AWARD":"A"},{"YEAR":"2020","ARTIST":"Taylor Swift","AWARD":"B"},{"YEAR":"2020","ARTIST":"Dernst Emile II, H.E.R. & Tiara Thomas","AWARD":"C"},{"YEAR":"2020","ARTIST":"Megan Thee Stallion","AWARD":"D"},{"YEAR":"2019","ARTIST":"Billie Eilish","AWARD":"A"},{"YEAR":"2019","ARTIST":"Billie Eilish","AWARD":"B"},{"YEAR":"2019","ARTIST":"Billie Eilish","AWARD":"C"},{"YEAR":"2019","ARTIST":"Billie Eilish","AWARD":"D"},{"YEAR":"2018","ARTIST":"Childish Gambino","AWARD":"A"},{"YEAR":"2018","ARTIST":"Kacey Musgraves","AWARD":"B"},{"YEAR":"2018","ARTIST":"Childish Gambino","AWARD":"C"},{"YEAR":"2018","ARTIST":"Dua Lipa","AWARD":"D"},{"YEAR":"2017","ARTIST":"Bruno Mars","AWARD":"A"},{"YEAR":"2017","ARTIST":"Bruno Mars","AWARD":"B"},{"YEAR":"2017","ARTIST":"Bruno Mars","AWARD":"C"},{"YEAR":"2017","ARTIST":"Alessia Cara","AWARD":"D"},{"YEAR":"2016","ARTIST":"Adele","AWARD":"A"},{"YEAR":"2016","ARTIST":"Adele","AWARD":"B"},{"YEAR":"2016","ARTIST":"Adele","AWARD":"C"},{"YEAR":"2016","ARTIST":"Chance The Rapper","AWARD":"D"},{"YEAR":"2015","ARTIST":"Mark Ronson Featuring Bruno Mars","AWARD":"A"},{"YEAR":"2015","ARTIST":"Taylor Swift","AWARD":"B"},{"YEAR":"2015","ARTIST":"Ed Sheeran","AWARD":"C"},{"YEAR":"2015","ARTIST":"Meghan Trainor","AWARD":"D"},{"YEAR":"2014","ARTIST":"Sam Smith","AWARD":"A"},{"YEAR":"2014","ARTIST":"Beck","AWARD":"B"},{"YEAR":"2014","ARTIST":"Sam Smith","AWARD":"C"},{"YEAR":"2014","ARTIST":"Sam Smith","AWARD":"D"},{"YEAR":"2013","ARTIST":"Daft Punk Featuring Pharrell Williams & Nile Rodgers","AWARD":"A"},{"YEAR":"2013","ARTIST":"Daft Punk","AWARD":"B"},{"YEAR":"2013","ARTIST":"Lorde","AWARD":"C"},{"YEAR":"2013","ARTIST":"Macklemore & Ryan Lewis","AWARD":"D"},{"YEAR":"2012","ARTIST":"Gotye Featuring Kimbra","AWARD":"A"},{"YEAR":"2012","ARTIST":"Mumford & Sons","AWARD":"B"},{"YEAR":"2012","ARTIST":"Fun. Featuring Janelle Monáe","AWARD":"C"},{"YEAR":"2012","ARTIST":"Fun.","AWARD":"D"},{"YEAR":"2011","ARTIST":"Adele","AWARD":"A"},{"YEAR":"2011","ARTIST":"Adele","AWARD":"B"},{"YEAR":"2011","ARTIST":"Adele","AWARD":"C"},{"YEAR":"2011","ARTIST":"Bon Iver","AWARD":"D"},{"YEAR":"2010","ARTIST":"Lady Antebellum","AWARD":"A"},{"YEAR":"2010","ARTIST":"Arcade Fire","AWARD":"B"},{"YEAR":"2010","ARTIST":"Lady Antebellum","AWARD":"C"},{"YEAR":"2010","ARTIST":"Esperanza Spalding","AWARD":"D"},{"YEAR":"2009","ARTIST":"Kings Of Leon","AWARD":"A"},{"YEAR":"2009","ARTIST":"Taylor Swift","AWARD":"B"},{"YEAR":"2009","ARTIST":"Beyoncé","AWARD":"C"},{"YEAR":"2009","ARTIST":"Zac Brown Band","AWARD":"D"},{"YEAR":"2008","ARTIST":"Robert Plant & Alison Krauss","AWARD":"A"},{"YEAR":"2008","ARTIST":"Robert Plant & Alison Krauss","AWARD":"B"},{"YEAR":"2008","ARTIST":"Coldplay","AWARD":"C"},{"YEAR":"2008","ARTIST":"Adele","AWARD":"D"},{"YEAR":"2007","ARTIST":"Amy Winehouse","AWARD":"A"},{"YEAR":"2007","ARTIST":"Herbie Hancock","AWARD":"B"},{"YEAR":"2007","ARTIST":"Amy Winehouse","AWARD":"C"},{"YEAR":"2007","ARTIST":"Amy Winehouse","AWARD":"D"},{"YEAR":"2006","ARTIST":"Dixie Chicks","AWARD":"A"},{"YEAR":"2006","ARTIST":"Dixie Chicks","AWARD":"B"},{"YEAR":"2006","ARTIST":"Dixie Chicks","AWARD":"C"},{"YEAR":"2006","ARTIST":"Carrie Underwood","AWARD":"D"},{"YEAR":"2005","ARTIST":"Green Day","AWARD":"A"},{"YEAR":"2005","ARTIST":"U2","AWARD":"B"},{"YEAR":"2005","ARTIST":"U2","AWARD":"C"},{"YEAR":"2005","ARTIST":"John Legend","AWARD":"D"},{"YEAR":"2004","ARTIST":"Ray Charles & Norah Jones","AWARD":"A"},{"YEAR":"2004","ARTIST":"Ray Charles & Various Artists","AWARD":"B"},{"YEAR":"2004","ARTIST":"John Mayer","AWARD":"C"},{"YEAR":"2004","ARTIST":"Maroon 5","AWARD":"D"},{"YEAR":"2003","ARTIST":"Coldplay","AWARD":"A"},{"YEAR":"2003","ARTIST":"OutKast","AWARD":"B"},{"YEAR":"2003","ARTIST":"Luther Vandross","AWARD":"C"},{"YEAR":"2003","ARTIST":"Evanescence","AWARD":"D"},{"YEAR":"2002","ARTIST":"Norah Jones","AWARD":"A"},{"YEAR":"2002","ARTIST":"Norah Jones","AWARD":"B"},{"YEAR":"2002","ARTIST":"Norah Jones","AWARD":"C"},{"YEAR":"2002","ARTIST":"Norah Jones","AWARD":"D"},{"YEAR":"2001","ARTIST":"U2","AWARD":"A"},{"YEAR":"2001","ARTIST":"Various Artists","AWARD":"B"},{"YEAR":"2001","ARTIST":"Alicia Keys","AWARD":"C"},{"YEAR":"2001","ARTIST":"Alicia Keys","AWARD":"D"},{"YEAR":"2000","ARTIST":"U2","AWARD":"A"},{"YEAR":"2000","ARTIST":"Steely Dan","AWARD":"B"},{"YEAR":"2000","ARTIST":"U2","AWARD":"C"},{"YEAR":"2000","ARTIST":"Shelby Lynne","AWARD":"D"},{"YEAR":"1999","ARTIST":"Santana Featuring Rob Thomas","AWARD":"A"},{"YEAR":"1999","ARTIST":"Santana","AWARD":"B"},{"YEAR":"1999","ARTIST":"Santana Featuring Rob Thomas","AWARD":"C"},{"YEAR":"1999","ARTIST":"Christina Aguilera","AWARD":"D"},{"YEAR":"1998","ARTIST":"Celine Dion","AWARD":"A"},{"YEAR":"1998","ARTIST":"Lauryn Hill","AWARD":"B"},{"YEAR":"1998","ARTIST":"Celine Dion","AWARD":"C"},{"YEAR":"1998","ARTIST":"Lauryn Hill","AWARD":"D"},{"YEAR":"1997","ARTIST":"Shawn Colvin","AWARD":"A"},{"YEAR":"1997","ARTIST":"Bob Dylan","AWARD":"B"},{"YEAR":"1997","ARTIST":"Shawn Colvin","AWARD":"C"},{"YEAR":"1997","ARTIST":"Paula Cole","AWARD":"D"},{"YEAR":"1996","ARTIST":"Eric Clapton","AWARD":"A"},{"YEAR":"1996","ARTIST":"Celine Dion","AWARD":"B"},{"YEAR":"1996","ARTIST":"Eric Clapton","AWARD":"C"},{"YEAR":"1996","ARTIST":"LeAnn Rimes","AWARD":"D"},{"YEAR":"1995","ARTIST":"Seal","AWARD":"A"},{"YEAR":"1995","ARTIST":"Alanis Morissette","AWARD":"B"},{"YEAR":"1995","ARTIST":"Seal","AWARD":"C"},{"YEAR":"1995","ARTIST":"Hootie & The Blowfish","AWARD":"D"},{"YEAR":"1994","ARTIST":"Sheryl Crow","AWARD":"A"},{"YEAR":"1994","ARTIST":"Tony Bennett","AWARD":"B"},{"YEAR":"1994","ARTIST":"Bruce Springsteen","AWARD":"C"},{"YEAR":"1994","ARTIST":"Sheryl Crow","AWARD":"D"},{"YEAR":"1993","ARTIST":"Whitney Houston","AWARD":"A"},{"YEAR":"1993","ARTIST":"Whitney Houston","AWARD":"B"},{"YEAR":"1993","ARTIST":"Peabo Bryson & Regina Belle","AWARD":"C"},{"YEAR":"1993","ARTIST":"Toni Braxton","AWARD":"D"},{"YEAR":"1992","ARTIST":"Eric Clapton","AWARD":"A"},{"YEAR":"1992","ARTIST":"Eric Clapton","AWARD":"B"},{"YEAR":"1992","ARTIST":"Eric Clapton","AWARD":"C"},{"YEAR":"1992","ARTIST":"Arrested Development","AWARD":"D"},{"YEAR":"1991","ARTIST":"Natalie Cole [With Nat \"King\" Cole]","AWARD":"A"},{"YEAR":"1991","ARTIST":"Natalie Cole","AWARD":"B"},{"YEAR":"1991","ARTIST":"Natalie Cole [With Nat \"King\" Cole]","AWARD":"C"},{"YEAR":"1991","ARTIST":"Marc Cohn","AWARD":"D"},{"YEAR":"1990","ARTIST":"Phil Collins","AWARD":"A"},{"YEAR":"1990","ARTIST":"Quincy Jones & Various Artists","AWARD":"B"},{"YEAR":"1990","ARTIST":"Bette Midler","AWARD":"C"},{"YEAR":"1990","ARTIST":"Mariah Carey","AWARD":"D"},{"YEAR":"1989","ARTIST":"Bette Midler","AWARD":"A"},{"YEAR":"1989","ARTIST":"Bonnie Raitt","AWARD":"B"},{"YEAR":"1989","ARTIST":"Bette Midler","AWARD":"C"},{"YEAR":"1989","ARTIST":"Bonnie Raitt","AWARD":"D"},{"YEAR":"1988","ARTIST":"Bobby McFerrin","AWARD":"A"},{"YEAR":"1988","ARTIST":"George Michael","AWARD":"B"},{"YEAR":"1988","ARTIST":"Bobby McFerrin","AWARD":"C"},{"YEAR":"1988","ARTIST":"Tracy Chapman","AWARD":"D"},{"YEAR":"1987","ARTIST":"Paul Simon","AWARD":"A"},{"YEAR":"1987","ARTIST":"U2","AWARD":"B"},{"YEAR":"1987","ARTIST":"Linda Ronstadt & James Ingram","AWARD":"C"},{"YEAR":"1987","ARTIST":"Jody Watley","AWARD":"D"},{"YEAR":"1986","ARTIST":"Steve Winwood","AWARD":"A"},{"YEAR":"1986","ARTIST":"Paul Simon","AWARD":"B"},{"YEAR":"1986","ARTIST":"Stevie Wonder & Various Artists ","AWARD":"C"},{"YEAR":"1986","ARTIST":"Bruce Hornsby & The Range","AWARD":"D"},{"YEAR":"1985","ARTIST":"Various Artists","AWARD":"A"},{"YEAR":"1985","ARTIST":"Phil Collins","AWARD":"B"},{"YEAR":"1985","ARTIST":"Various Artists","AWARD":"C"},{"YEAR":"1985","ARTIST":"Sade","AWARD":"D"},{"YEAR":"1984","ARTIST":"Tina Turner","AWARD":"A"},{"YEAR":"1984","ARTIST":"Lionel Richie","AWARD":"B"},{"YEAR":"1984","ARTIST":"Tina Turner","AWARD":"C"},{"YEAR":"1984","ARTIST":"Cyndi Lauper","AWARD":"D"},{"YEAR":"1983","ARTIST":"Michael Jackson","AWARD":"A"},{"YEAR":"1983","ARTIST":"Michael Jackson","AWARD":"B"},{"YEAR":"1983","ARTIST":"The Police","AWARD":"C"},{"YEAR":"1983","ARTIST":"Culture Club","AWARD":"D"},{"YEAR":"1982","ARTIST":"Toto","AWARD":"A"},{"YEAR":"1982","ARTIST":"Toto","AWARD":"B"},{"YEAR":"1982","ARTIST":"Willie Nelson","AWARD":"C"},{"YEAR":"1982","ARTIST":"Men At Work","AWARD":"D"},{"YEAR":"1981","ARTIST":"Kim Carnes","AWARD":"A"},{"YEAR":"1981","ARTIST":"John Lennon & Yoko Ono","AWARD":"B"},{"YEAR":"1981","ARTIST":"Kim Carnes","AWARD":"C"},{"YEAR":"1981","ARTIST":"Sheena Easton","AWARD":"D"},{"YEAR":"1980","ARTIST":"Christopher Cross","AWARD":"A"},{"YEAR":"1980","ARTIST":"Christopher Cross","AWARD":"B"},{"YEAR":"1980","ARTIST":"Christopher Cross","AWARD":"C"},{"YEAR":"1980","ARTIST":"Christopher Cross","AWARD":"D"},{"YEAR":"1979","ARTIST":"The Doobie Brothers","AWARD":"A"},{"YEAR":"1979","ARTIST":"Billy Joel","AWARD":"B"},{"YEAR":"1979","ARTIST":"The Doobie Brothers","AWARD":"C"},{"YEAR":"1979","ARTIST":"Rickie Lee Jones","AWARD":"D"},{"YEAR":"1978","ARTIST":"Billy Joel","AWARD":"A"},{"YEAR":"1978","ARTIST":"Various Artists","AWARD":"B"},{"YEAR":"1978","ARTIST":"Billy Joel","AWARD":"C"},{"YEAR":"1978","ARTIST":"A Taste Of Honey","AWARD":"D"},{"YEAR":"1977","ARTIST":"Eagles","AWARD":"A"},{"YEAR":"1977","ARTIST":"Fleetwood Mac","AWARD":"B"},{"YEAR":"1977","ARTIST":"Debby Boone (You Light Up My Life) & Barbra Streisand (Love Theme From A Star Is Born)","AWARD":"C"},{"YEAR":"1977","ARTIST":"Debby Boone","AWARD":"D"},{"YEAR":"1976","ARTIST":"George Benson","AWARD":"A"},{"YEAR":"1976","ARTIST":"Stevie Wonder","AWARD":"B"},{"YEAR":"1976","ARTIST":"Barry Manilow","AWARD":"C"},{"YEAR":"1976","ARTIST":"Starland Vocal Band","AWARD":"D"},{"YEAR":"1975","ARTIST":"Captain & Tennille","AWARD":"A"},{"YEAR":"1975","ARTIST":"Paul Simon","AWARD":"B"},{"YEAR":"1975","ARTIST":"Judy Collins","AWARD":"C"},{"YEAR":"1975","ARTIST":"Natalie Cole","AWARD":"D"},{"YEAR":"1974","ARTIST":"Olivia Newton-John","AWARD":"A"},{"YEAR":"1974","ARTIST":"Stevie Wonder","AWARD":"B"},{"YEAR":"1974","ARTIST":"Barbra Streisand","AWARD":"C"},{"YEAR":"1974","ARTIST":"Marvin Hamlisch","AWARD":"D"},{"YEAR":"1973","ARTIST":"Roberta Flack","AWARD":"A"},{"YEAR":"1973","ARTIST":"Stevie Wonder","AWARD":"B"},{"YEAR":"1973","ARTIST":"Roberta Flack","AWARD":"C"},{"YEAR":"1973","ARTIST":"Bette Midler","AWARD":"D"},{"YEAR":"1972","ARTIST":"Roberta Flack","AWARD":"A"},{"YEAR":"1972","ARTIST":"Eric Clapton, Bob Dylan & Various Artists","AWARD":"B"},{"YEAR":"1972","ARTIST":"Roberta Flack","AWARD":"C"},{"YEAR":"1972","ARTIST":"America","AWARD":"D"},{"YEAR":"1971","ARTIST":"Carole King","AWARD":"A"},{"YEAR":"1971","ARTIST":"Carole King","AWARD":"B"},{"YEAR":"1971","ARTIST":"Carole King","AWARD":"C"},{"YEAR":"1971","ARTIST":"Carly Simon","AWARD":"D"},{"YEAR":"1970","ARTIST":"Simon & Garfunkel","AWARD":"A"},{"YEAR":"1970","ARTIST":"Simon & Garfunkel","AWARD":"B"},{"YEAR":"1970","ARTIST":"Simon & Garfunkel","AWARD":"C"},{"YEAR":"1970","ARTIST":"Carpenters","AWARD":"D"},{"YEAR":"1969","ARTIST":"The 5th Dimension","AWARD":"A"},{"YEAR":"1969","ARTIST":"Blood, Sweat & Tears","AWARD":"B"},{"YEAR":"1969","ARTIST":"Joe South","AWARD":"C"},{"YEAR":"1969","ARTIST":"Crosby, Stills & Nash","AWARD":"D"},{"YEAR":"1968","ARTIST":"Simon & Garfunkel","AWARD":"A"},{"YEAR":"1968","ARTIST":"Glen Campbell","AWARD":"B"},{"YEAR":"1968","ARTIST":"Roger Miller AND O.C. Smith","AWARD":"C"},{"YEAR":"1968","ARTIST":"José Feliciano","AWARD":"D"},{"YEAR":"1967","ARTIST":"The 5th Dimension","AWARD":"A"},{"YEAR":"1967","ARTIST":"The Beatles","AWARD":"B"},{"YEAR":"1967","ARTIST":"The 5th Dimension","AWARD":"C"},{"YEAR":"1967","ARTIST":"Bobbie Gentry","AWARD":"D"},{"YEAR":"1966","ARTIST":"Frank Sinatra","AWARD":"A"},{"YEAR":"1966","ARTIST":"Frank Sinatra","AWARD":"B"},{"YEAR":"1966","ARTIST":"The Beatles","AWARD":"C"},{"YEAR":"1966","ARTIST":"","AWARD":"D"},{"YEAR":"1965","ARTIST":"Herb Alpert And The Tijuana Brass","AWARD":"A"},{"YEAR":"1965","ARTIST":"Frank Sinatra","AWARD":"B"},{"YEAR":"1965","ARTIST":"Tony Bennett","AWARD":"C"},{"YEAR":"1965","ARTIST":"Tom Jones","AWARD":"D"},{"YEAR":"1964","ARTIST":"Stan Getz & Astrud Gilberto","AWARD":"A"},{"YEAR":"1964","ARTIST":"Stan Getz & João Gilberto","AWARD":"B"},{"YEAR":"1964","ARTIST":"Stan Getz & João Gilberto","AWARD":"C"},{"YEAR":"1964","ARTIST":"The Beatles","AWARD":"D"},{"YEAR":"1963","ARTIST":"Henry Mancini","AWARD":"A"},{"YEAR":"1963","ARTIST":"Barbra Streisand","AWARD":"B"},{"YEAR":"1963","ARTIST":"Henry Mancini","AWARD":"C"},{"YEAR":"1963","ARTIST":"Ward Swingle (The Swingle Singers)","AWARD":"D"},{"YEAR":"1962","ARTIST":"Tony Bennett","AWARD":"A"},{"YEAR":"1962","ARTIST":"Vaughn Meader","AWARD":"B"},{"YEAR":"1962","ARTIST":"Sammy Davis, Jr. AND Anthony Newley","AWARD":"C"},{"YEAR":"1962","ARTIST":"Robert Goulet","AWARD":"D"},{"YEAR":"1961","ARTIST":"Henry Mancini","AWARD":"A"},{"YEAR":"1961","ARTIST":"Judy Garland","AWARD":"B"},{"YEAR":"1961","ARTIST":"Henry Mancini","AWARD":"C"},{"YEAR":"1961","ARTIST":"Peter Nero","AWARD":"D"},{"YEAR":"1960","ARTIST":"Percy Faith & His Orchestra","AWARD":"A"},{"YEAR":"1960","ARTIST":"Bob Newhart","AWARD":"B"},{"YEAR":"1960","ARTIST":"Ernest Gold","AWARD":"C"},{"YEAR":"1960","ARTIST":"Bob Newhart","AWARD":"D"},{"YEAR":"1959","ARTIST":"Bobby Darin","AWARD":"A"},{"YEAR":"1959","ARTIST":"Frank Sinatra","AWARD":"B"},{"YEAR":"1959","ARTIST":"Jimmy Driftwood","AWARD":"C"},{"YEAR":"1959","ARTIST":"Bobby Darin","AWARD":"D"},{"YEAR":"1958","ARTIST":"Domenico Modugno","AWARD":"A"},{"YEAR":"1958","ARTIST":"Henry Mancini","AWARD":"B"},{"YEAR":"1958","ARTIST":"Domenico Modugno","AWARD":"C"},{"YEAR":"1958","ARTIST":"","AWARD":"D"}]
+[
+    {
+        "YEAR": "2021",
+        "ARTIST": "Silk Sonic (Bruno Mars, Anderson .Paak)",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2021",
+        "ARTIST": "Jon Batiste",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2021",
+        "ARTIST": "Silk Sonic (Bruno Mars, Anderson .Paak)",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2021",
+        "ARTIST": "Olivia Rodrigo",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2020",
+        "ARTIST": "Billie Eilish",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2020",
+        "ARTIST": "Taylor Swift",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2020",
+        "ARTIST": "Dernst Emile II, H.E.R. & Tiara Thomas",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2020",
+        "ARTIST": "Megan Thee Stallion",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2019",
+        "ARTIST": "Billie Eilish",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2019",
+        "ARTIST": "Billie Eilish",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2019",
+        "ARTIST": "Billie Eilish",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2019",
+        "ARTIST": "Billie Eilish",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2018",
+        "ARTIST": "Childish Gambino",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2018",
+        "ARTIST": "Kacey Musgraves",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2018",
+        "ARTIST": "Childish Gambino",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2018",
+        "ARTIST": "Dua Lipa",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2017",
+        "ARTIST": "Bruno Mars",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2017",
+        "ARTIST": "Bruno Mars",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2017",
+        "ARTIST": "Bruno Mars",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2017",
+        "ARTIST": "Alessia Cara",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2016",
+        "ARTIST": "Adele",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2016",
+        "ARTIST": "Adele",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2016",
+        "ARTIST": "Adele",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2016",
+        "ARTIST": "Chance The Rapper",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2015",
+        "ARTIST": "Mark Ronson Featuring Bruno Mars",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2015",
+        "ARTIST": "Taylor Swift",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2015",
+        "ARTIST": "Ed Sheeran",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2015",
+        "ARTIST": "Meghan Trainor",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2014",
+        "ARTIST": "Sam Smith",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2014",
+        "ARTIST": "Beck",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2014",
+        "ARTIST": "Sam Smith",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2014",
+        "ARTIST": "Sam Smith",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2013",
+        "ARTIST": "Daft Punk Featuring Pharrell Williams & Nile Rodgers",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2013",
+        "ARTIST": "Daft Punk",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2013",
+        "ARTIST": "Lorde",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2013",
+        "ARTIST": "Macklemore & Ryan Lewis",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2012",
+        "ARTIST": "Gotye Featuring Kimbra",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2012",
+        "ARTIST": "Mumford & Sons",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2012",
+        "ARTIST": "Fun. Featuring Janelle Monáe",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2012",
+        "ARTIST": "Fun.",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2011",
+        "ARTIST": "Adele",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2011",
+        "ARTIST": "Adele",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2011",
+        "ARTIST": "Adele",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2011",
+        "ARTIST": "Bon Iver",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2010",
+        "ARTIST": "Lady Antebellum",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2010",
+        "ARTIST": "Arcade Fire",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2010",
+        "ARTIST": "Lady Antebellum",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2010",
+        "ARTIST": "Esperanza Spalding",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2009",
+        "ARTIST": "Kings Of Leon",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2009",
+        "ARTIST": "Taylor Swift",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2009",
+        "ARTIST": "Beyoncé",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2009",
+        "ARTIST": "Zac Brown Band",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2008",
+        "ARTIST": "Robert Plant & Alison Krauss",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2008",
+        "ARTIST": "Robert Plant & Alison Krauss",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2008",
+        "ARTIST": "Coldplay",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2008",
+        "ARTIST": "Adele",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2007",
+        "ARTIST": "Amy Winehouse",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2007",
+        "ARTIST": "Herbie Hancock",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2007",
+        "ARTIST": "Amy Winehouse",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2007",
+        "ARTIST": "Amy Winehouse",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2006",
+        "ARTIST": "Dixie Chicks",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2006",
+        "ARTIST": "Dixie Chicks",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2006",
+        "ARTIST": "Dixie Chicks",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2006",
+        "ARTIST": "Carrie Underwood",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2005",
+        "ARTIST": "Green Day",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2005",
+        "ARTIST": "U2",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2005",
+        "ARTIST": "U2",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2005",
+        "ARTIST": "John Legend",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2004",
+        "ARTIST": "Ray Charles & Norah Jones",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2004",
+        "ARTIST": "Ray Charles & Various Artists",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2004",
+        "ARTIST": "John Mayer",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2004",
+        "ARTIST": "Maroon 5",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2003",
+        "ARTIST": "Coldplay",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2003",
+        "ARTIST": "OutKast",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2003",
+        "ARTIST": "Luther Vandross",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2003",
+        "ARTIST": "Evanescence",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2002",
+        "ARTIST": "Norah Jones",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2002",
+        "ARTIST": "Norah Jones",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2002",
+        "ARTIST": "Norah Jones",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2002",
+        "ARTIST": "Norah Jones",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2001",
+        "ARTIST": "U2",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2001",
+        "ARTIST": "Various Artists",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2001",
+        "ARTIST": "Alicia Keys",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2001",
+        "ARTIST": "Alicia Keys",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "2000",
+        "ARTIST": "U2",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "2000",
+        "ARTIST": "Steely Dan",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "2000",
+        "ARTIST": "U2",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "2000",
+        "ARTIST": "Shelby Lynne",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1999",
+        "ARTIST": "Santana Featuring Rob Thomas",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1999",
+        "ARTIST": "Santana",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1999",
+        "ARTIST": "Santana Featuring Rob Thomas",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1999",
+        "ARTIST": "Christina Aguilera",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1998",
+        "ARTIST": "Celine Dion",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1998",
+        "ARTIST": "Lauryn Hill",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1998",
+        "ARTIST": "Celine Dion",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1998",
+        "ARTIST": "Lauryn Hill",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1997",
+        "ARTIST": "Shawn Colvin",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1997",
+        "ARTIST": "Bob Dylan",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1997",
+        "ARTIST": "Shawn Colvin",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1997",
+        "ARTIST": "Paula Cole",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1996",
+        "ARTIST": "Eric Clapton",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1996",
+        "ARTIST": "Celine Dion",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1996",
+        "ARTIST": "Eric Clapton",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1996",
+        "ARTIST": "LeAnn Rimes",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1995",
+        "ARTIST": "Seal",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1995",
+        "ARTIST": "Alanis Morissette",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1995",
+        "ARTIST": "Seal",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1995",
+        "ARTIST": "Hootie & The Blowfish",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1994",
+        "ARTIST": "Sheryl Crow",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1994",
+        "ARTIST": "Tony Bennett",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1994",
+        "ARTIST": "Bruce Springsteen",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1994",
+        "ARTIST": "Sheryl Crow",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1993",
+        "ARTIST": "Whitney Houston",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1993",
+        "ARTIST": "Whitney Houston",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1993",
+        "ARTIST": "Peabo Bryson & Regina Belle",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1993",
+        "ARTIST": "Toni Braxton",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1992",
+        "ARTIST": "Eric Clapton",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1992",
+        "ARTIST": "Eric Clapton",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1992",
+        "ARTIST": "Eric Clapton",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1992",
+        "ARTIST": "Arrested Development",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1991",
+        "ARTIST": "Natalie Cole [With Nat \"King\" Cole]",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1991",
+        "ARTIST": "Natalie Cole",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1991",
+        "ARTIST": "Natalie Cole [With Nat \"King\" Cole]",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1991",
+        "ARTIST": "Marc Cohn",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1990",
+        "ARTIST": "Phil Collins",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1990",
+        "ARTIST": "Quincy Jones & Various Artists",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1990",
+        "ARTIST": "Bette Midler",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1990",
+        "ARTIST": "Mariah Carey",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1989",
+        "ARTIST": "Bette Midler",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1989",
+        "ARTIST": "Bonnie Raitt",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1989",
+        "ARTIST": "Bette Midler",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1989",
+        "ARTIST": "Bonnie Raitt",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1988",
+        "ARTIST": "Bobby McFerrin",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1988",
+        "ARTIST": "George Michael",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1988",
+        "ARTIST": "Bobby McFerrin",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1988",
+        "ARTIST": "Tracy Chapman",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1987",
+        "ARTIST": "Paul Simon",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1987",
+        "ARTIST": "U2",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1987",
+        "ARTIST": "Linda Ronstadt & James Ingram",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1987",
+        "ARTIST": "Jody Watley",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1986",
+        "ARTIST": "Steve Winwood",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1986",
+        "ARTIST": "Paul Simon",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1986",
+        "ARTIST": "Stevie Wonder & Various Artists ",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1986",
+        "ARTIST": "Bruce Hornsby & The Range",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1985",
+        "ARTIST": "Various Artists",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1985",
+        "ARTIST": "Phil Collins",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1985",
+        "ARTIST": "Various Artists",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1985",
+        "ARTIST": "Sade",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1984",
+        "ARTIST": "Tina Turner",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1984",
+        "ARTIST": "Lionel Richie",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1984",
+        "ARTIST": "Tina Turner",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1984",
+        "ARTIST": "Cyndi Lauper",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1983",
+        "ARTIST": "Michael Jackson",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1983",
+        "ARTIST": "Michael Jackson",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1983",
+        "ARTIST": "The Police",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1983",
+        "ARTIST": "Culture Club",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1982",
+        "ARTIST": "Toto",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1982",
+        "ARTIST": "Toto",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1982",
+        "ARTIST": "Willie Nelson",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1982",
+        "ARTIST": "Men At Work",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1981",
+        "ARTIST": "Kim Carnes",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1981",
+        "ARTIST": "John Lennon & Yoko Ono",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1981",
+        "ARTIST": "Kim Carnes",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1981",
+        "ARTIST": "Sheena Easton",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1980",
+        "ARTIST": "Christopher Cross",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1980",
+        "ARTIST": "Christopher Cross",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1980",
+        "ARTIST": "Christopher Cross",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1980",
+        "ARTIST": "Christopher Cross",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1979",
+        "ARTIST": "The Doobie Brothers",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1979",
+        "ARTIST": "Billy Joel",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1979",
+        "ARTIST": "The Doobie Brothers",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1979",
+        "ARTIST": "Rickie Lee Jones",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1978",
+        "ARTIST": "Billy Joel",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1978",
+        "ARTIST": "Various Artists",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1978",
+        "ARTIST": "Billy Joel",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1978",
+        "ARTIST": "A Taste Of Honey",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1977",
+        "ARTIST": "Eagles",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1977",
+        "ARTIST": "Fleetwood Mac",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1977",
+        "ARTIST": "Debby Boone (You Light Up My Life) & Barbra Streisand (Love Theme From A Star Is Born)",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1977",
+        "ARTIST": "Debby Boone",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1976",
+        "ARTIST": "George Benson",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1976",
+        "ARTIST": "Stevie Wonder",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1976",
+        "ARTIST": "Barry Manilow",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1976",
+        "ARTIST": "Starland Vocal Band",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1975",
+        "ARTIST": "Captain & Tennille",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1975",
+        "ARTIST": "Paul Simon",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1975",
+        "ARTIST": "Judy Collins",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1975",
+        "ARTIST": "Natalie Cole",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1974",
+        "ARTIST": "Olivia Newton-John",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1974",
+        "ARTIST": "Stevie Wonder",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1974",
+        "ARTIST": "Barbra Streisand",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1974",
+        "ARTIST": "Marvin Hamlisch",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1973",
+        "ARTIST": "Roberta Flack",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1973",
+        "ARTIST": "Stevie Wonder",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1973",
+        "ARTIST": "Roberta Flack",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1973",
+        "ARTIST": "Bette Midler",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1972",
+        "ARTIST": "Roberta Flack",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1972",
+        "ARTIST": "Eric Clapton, Bob Dylan & Various Artists",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1972",
+        "ARTIST": "Roberta Flack",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1972",
+        "ARTIST": "America",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1971",
+        "ARTIST": "Carole King",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1971",
+        "ARTIST": "Carole King",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1971",
+        "ARTIST": "Carole King",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1971",
+        "ARTIST": "Carly Simon",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1970",
+        "ARTIST": "Simon & Garfunkel",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1970",
+        "ARTIST": "Simon & Garfunkel",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1970",
+        "ARTIST": "Simon & Garfunkel",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1970",
+        "ARTIST": "Carpenters",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1969",
+        "ARTIST": "The 5th Dimension",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1969",
+        "ARTIST": "Blood, Sweat & Tears",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1969",
+        "ARTIST": "Joe South",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1969",
+        "ARTIST": "Crosby, Stills & Nash",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1968",
+        "ARTIST": "Simon & Garfunkel",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1968",
+        "ARTIST": "Glen Campbell",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1968",
+        "ARTIST": "Roger Miller AND O.C. Smith",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1968",
+        "ARTIST": "José Feliciano",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1967",
+        "ARTIST": "The 5th Dimension",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1967",
+        "ARTIST": "The Beatles",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1967",
+        "ARTIST": "The 5th Dimension",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1967",
+        "ARTIST": "Bobbie Gentry",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1966",
+        "ARTIST": "Frank Sinatra",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1966",
+        "ARTIST": "Frank Sinatra",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1966",
+        "ARTIST": "The Beatles",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1966",
+        "ARTIST": "",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1965",
+        "ARTIST": "Herb Alpert And The Tijuana Brass",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1965",
+        "ARTIST": "Frank Sinatra",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1965",
+        "ARTIST": "Tony Bennett",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1965",
+        "ARTIST": "Tom Jones",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1964",
+        "ARTIST": "Stan Getz & Astrud Gilberto",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1964",
+        "ARTIST": "Stan Getz & João Gilberto",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1964",
+        "ARTIST": "Stan Getz & João Gilberto",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1964",
+        "ARTIST": "The Beatles",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1963",
+        "ARTIST": "Henry Mancini",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1963",
+        "ARTIST": "Barbra Streisand",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1963",
+        "ARTIST": "Henry Mancini",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1963",
+        "ARTIST": "Ward Swingle (The Swingle Singers)",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1962",
+        "ARTIST": "Tony Bennett",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1962",
+        "ARTIST": "Vaughn Meader",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1962",
+        "ARTIST": "Sammy Davis, Jr. AND Anthony Newley",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1962",
+        "ARTIST": "Robert Goulet",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1961",
+        "ARTIST": "Henry Mancini",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1961",
+        "ARTIST": "Judy Garland",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1961",
+        "ARTIST": "Henry Mancini",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1961",
+        "ARTIST": "Peter Nero",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1960",
+        "ARTIST": "Percy Faith & His Orchestra",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1960",
+        "ARTIST": "Bob Newhart",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1960",
+        "ARTIST": "Ernest Gold",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1960",
+        "ARTIST": "Bob Newhart",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1959",
+        "ARTIST": "Bobby Darin",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1959",
+        "ARTIST": "Frank Sinatra",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1959",
+        "ARTIST": "Jimmy Driftwood",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1959",
+        "ARTIST": "Bobby Darin",
+        "AWARD": "D"
+    },
+    {
+        "YEAR": "1958",
+        "ARTIST": "Domenico Modugno",
+        "AWARD": "A"
+    },
+    {
+        "YEAR": "1958",
+        "ARTIST": "Henry Mancini",
+        "AWARD": "B"
+    },
+    {
+        "YEAR": "1958",
+        "ARTIST": "Domenico Modugno",
+        "AWARD": "C"
+    },
+    {
+        "YEAR": "1958",
+        "ARTIST": "",
+        "AWARD": "D"
+    }
+]

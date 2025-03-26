@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Q1",
+    "Product": "Product A",
+    "value": 30
+  },
+  {
+    "category": "Q1",
+    "Product": "Product B",
+    "value": 20
+  },
+  {
+    "category": "Q1",
+    "Product": "Product C",
+    "value": 15
+  },
+  {
+    "category": "Q2",
+    "Product": "Product A",
+    "value": 40
+  },
+  {
+    "category": "Q2",
+    "Product": "Product B",
+    "value": 25
+  },
+  {
+    "category": "Q2",
+    "Product": "Product C",
+    "value": 20
+  },
+  {
+    "category": "Q3",
+    "Product": "Product A",
+    "value": 35
+  },
+  {
+    "category": "Q3",
+    "Product": "Product B",
+    "value": 30
+  },
+  {
+    "category": "Q3",
+    "Product": "Product C",
+    "value": 25
+  },
+  {
+    "category": "Q4",
+    "Product": "Product A",
+    "value": 50
+  },
+  {
+    "category": "Q4",
+    "Product": "Product B",
+    "value": 35
+  },
+  {
+    "category": "Q4",
+    "Product": "Product C",
+    "value": 30
+  }
+]

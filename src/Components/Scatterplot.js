@@ -8,32 +8,44 @@ export default function Scatterplot(props) {
     const ref = useD3(
         (svg) => {
             // clear previous circles (necessary if updating scatterplot)
-            d3.selectAll(`svg#${props.id} circle`).remove();
+            d3.selectAll(`svg#${props.id} circle`).remove()
 
-            const height = props.height;
-            const width = d3.select(`svg#${props.id}`).node().getBoundingClientRect().width; //svg's width
-            const margin = props.margin;
+            const height = props.height
+            const width = d3.select(`svg#${props.id}`).node().getBoundingClientRect().width //svg's width
+            const margin = props.margin
 
             // x and y axes
             const x = d3.scaleTime()
                 .rangeRound([margin.right, width-margin.right-margin.left])
-                .domain(props.xdomain);
+                .domain(props.xdomain)
 
             const y = d3.scaleBand()
                 .domain(props.ydomain)
                 .rangeRound([0, height-margin.top-margin.bottom])
                 .padding(1) //need otherwise circles are offset
 
-            const xAxis = g => g
+            const xAxis = d3.axisBottom(x)
+                .tickSize(-height-margin.top-margin.bottom)
+
+            const yAxis = d3.axisLeft(y)
+                .tickSize(-width-margin.left-margin.right)
+
+            svg.select(".x-axis")
                 .attr("transform", `translate(${margin.left},${height - margin.bottom})`)
-                .call(d3.axisBottom(x));
+                .call(xAxis)
 
-            const yAxis = g => g
+            svg.select(".y-axis")
                 .attr("transform", `translate(${margin.left},${margin.top})`)
-                .call(d3.axisLeft(y));
+                .call(yAxis)
 
-            svg.select(".x-axis").call(xAxis);
-            svg.select(".y-axis").call(yAxis);
+            // hide vertical line for y axis
+            d3.selectAll("g.y-axis path").style("display", "none")
+            // horizontal y axis ticks have dash
+            svg.selectAll("g.y-axis g.tick line").style("stroke-dasharray", "5 5").style("stroke", "#ccc")
+            // hide horizontal line for x axis
+            d3.selectAll("g.x-axis path").style("display", "none")
+            // vertical x axis ticks have dash
+            svg.selectAll("g.x-axis g.tick line").style("stroke-dasharray", "5 5").style("stroke", "#ccc")
 
             // tooltip
             svg
@@ -46,8 +58,7 @@ export default function Scatterplot(props) {
                 .style("opacity", 0);
 
             // scatterplot
-            svg
-                .select(".plot")
+            svg.select(".plot")
                 .attr("transform", `translate(${margin.left},${margin.top})`)
                 .selectAll("dot")
                 .data(props.data)
@@ -58,7 +69,7 @@ export default function Scatterplot(props) {
                 .attr("cx", d => x(d[props.xkey]) )
                 .attr("i", (d,i) => i )
                 .attr("r", 5.5)
-                .style("fill", "#666")
+                .style("fill", props.color)
                 .attr("stroke-width", 1)
                 .attr("stroke", "#fff")
                 .on("mouseover",function(d) {
@@ -102,9 +113,9 @@ export default function Scatterplot(props) {
                     width: "100%"
                 }}
             >
-                <g className='plot' />
                 <g className='x-axis' />
                 <g className='y-axis' />
+                <g className='plot' />
             </svg>
         </div>
     )
