@@ -8,10 +8,12 @@ export default function Bar(props) {
     const ref = useD3(
         (svg) => {
 
-            const width = d3.select(`svg#${props.id}`).node().getBoundingClientRect().width //svg's width
-            const height = props.height
             const margin = props.margin
+            const width = (d3.select(`svg#${props.id}`).node().getBoundingClientRect().width) - margin.right - margin.left
+            const height = props.height - margin.top  - margin.bottom
 
+            d3.select(`svg#${props.id} g.plot`)
+                .attr("transform", `translate(${margin.left},${margin.top})`)
 
             // x and y scales
             var x, y
@@ -19,44 +21,44 @@ export default function Bar(props) {
 
                 x = d3.scaleLinear()
                     .domain(props.xdomain)
-                    .range([0, width - margin.right - margin.left])
+                    .range([0, width])
 
             } else if (props.xscale == "band") {
 
                 x = d3.scaleBand()
                     .domain(props.xdomain)
-                    .rangeRound([0, width - margin.left - margin.right])
-                    .padding(0.1)
+                    .rangeRound([0, width])
+                    .padding(0.2)
             } 
 
             if (props.yscale == "linear") {
 
                 y = d3.scaleLinear()
                     .domain(props.ydomain)
-                    .range([height - margin.top  - margin.bottom, 0])
+                    .range([height, 0])
 
             } else if (props.yscale == "band") {
 
                 y = d3.scaleBand()
                     .domain(props.ydomain)
-                    .rangeRound([0, height - margin.top  - margin.bottom])
-                    .padding(0.1)
+                    .rangeRound([0, height])
+                    .padding(0.2)
             }  
 
 
             // x and y axes
             const xAxis = d3.axisBottom(x)
-                    .tickSize(-height - margin.top - margin.bottom)
+                    .tickSize(-height)
 
             const yAxis = d3.axisLeft(y)
-                    .tickSize(-width - margin.left - margin.right)
+                    .tickSize(-width)
             
             svg.select(".x-axis")
-                .attr("transform", `translate(${margin.left},${height - margin.bottom})`)
+                .attr("transform", `translate(${margin.left},${height + margin.top})`)
                 .call(xAxis)
 
             svg.select(".y-axis")
-                .attr("transform", `translate(${margin.left},0)`)
+                .attr("transform", `translate(${margin.left},${margin.top})`)
                 .call(yAxis)
 
 
@@ -88,7 +90,7 @@ export default function Bar(props) {
                 svg.select(".plot").selectAll("rect")
                     .data(props.data)
                     .join("rect")
-                    .attr("x", margin.left)
+                    .attr("x", 0)
                     .attr("y", d => y(d[props.ykey]))
                     .attr("width", d => x(d[props.xkey]))
                     .attr("height", y.bandwidth())
@@ -99,12 +101,12 @@ export default function Bar(props) {
                 svg.select(".plot").selectAll("rect")
                     .data(props.data)
                     .join("rect")
-                    .attr("x", d => x(d[props.xkey])+margin.left) 
+                    .attr("x", d => x(d[props.xkey])) 
                     .attr("y", d => y(d[props.ykey]))
                     .attr("width", x.bandwidth())
-                    .attr("height", d => (height - margin.top  - margin.bottom) - y(d[props.ykey]))
+                    .attr("height", d => height - y(d[props.ykey]))
                     .attr("fill", props.color)
-            }
+            } 
 
             // text labels
             if (props.orientation === "horizontal") {
@@ -114,7 +116,7 @@ export default function Bar(props) {
                     .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", d => x(d[props.xkey]) + margin.left + 5)
+                    .attr("x", d => x(d[props.xkey]) + 5)
                     .attr("y", d => y(d[props.ykey]))
                     .attr("dy", "1.5em")
                     .style("font-size", "10px")
@@ -127,11 +129,12 @@ export default function Bar(props) {
                     .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", d => x(d[props.xkey]) + margin.left + (x.bandwidth()/2))
+                    .attr("x", d => x(d[props.xkey]) + (x.bandwidth()/2))
                     .attr("y", d => y(d[props.ykey]) - 5)
+                    .attr("text-anchor", "middle")
                     .style("font-size", "10px")
                     .text(d => d[props.ykey])
-            }
+            } 
             
         }, 
         [] //can pass a props here, like props.artist
