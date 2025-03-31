@@ -45,7 +45,6 @@ export default function Bar(props) {
                     .padding(0.2)
             }  
 
-
             // x and y axes
             const xAxis = d3.axisBottom(x)
                     .tickSize(-height)

@@ -10,28 +10,36 @@ export default function Scatterplot(props) {
             // clear previous circles (necessary if updating scatterplot)
             d3.selectAll(`svg#${props.id} circle`).remove()
 
-            const height = props.height
-            const width = d3.select(`svg#${props.id}`).node().getBoundingClientRect().width //svg's width
             const margin = props.margin
+            const height = props.height - margin.top - margin.bottom
+            const width = (d3.select(`svg#${props.id}`).node().getBoundingClientRect().width) - margin.right - margin.left
+
+            d3.select(`svg#${props.id} g.plot`)
+                .attr("transform", `translate(${margin.left},${margin.top})`)
 
             // x and y axes
-            const x = d3.scaleTime()
-                .rangeRound([margin.right, width-margin.right-margin.left])
-                .domain(props.xdomain)
+            var x, y
+            if (props.xscale === "time") {
+                x = d3.scaleTime()
+                    .rangeRound([margin.right, width])
+                    .domain(props.xdomain)
+            }
 
-            const y = d3.scaleBand()
-                .domain(props.ydomain)
-                .rangeRound([0, height-margin.top-margin.bottom])
-                .padding(1) //need otherwise circles are offset
+            if (props.yscale === "band") {
+                y = d3.scaleBand()
+                    .rangeRound([0, height])
+                    .domain(props.ydomain)
+                    .padding(1) //need otherwise circles are offset 
+            }
 
             const xAxis = d3.axisBottom(x)
-                .tickSize(-height-margin.top-margin.bottom)
+                .tickSize(-height)
 
             const yAxis = d3.axisLeft(y)
-                .tickSize(-width-margin.left-margin.right)
+                .tickSize(-width)
 
             svg.select(".x-axis")
-                .attr("transform", `translate(${margin.left},${height - margin.bottom})`)
+                .attr("transform", `translate(${margin.left},${height + margin.top})`)
                 .call(xAxis)
 
             svg.select(".y-axis")
@@ -59,7 +67,6 @@ export default function Scatterplot(props) {
 
             // scatterplot
             svg.select(".plot")
-                .attr("transform", `translate(${margin.left},${margin.top})`)
                 .selectAll("dot")
                 .data(props.data)
                 .enter()
