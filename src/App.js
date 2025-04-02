@@ -215,8 +215,9 @@ function App() {
             xdomain={d3.extent(formattedLineChartData, d => d.date)}
             yscale={"linear"}
             ydomain={[0, d3.max(formattedLineChartData, d => d.value)]}
-            ykey={"date"} 
-            xkey={"value"}
+            ykey={"value"} 
+            xkey={"date"}
+            color={"steelblue"}
           />
         </div>
         }

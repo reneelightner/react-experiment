@@ -55,17 +55,18 @@ export default function Line(props) {
             svg.selectAll("g.x-axis g.tick line").style("stroke-dasharray", "5 5").style("stroke", "#ccc")
 
             const line = d3.line()
-                .x(d => x(d.date))
-                .y(d => y(d.value))
+                .x(d => x(d[props.xkey]))
+                .y(d => y(d[props.ykey]))
 
-            // line
-            svg.select(".plot")
-                .append("path")
-                .datum(props.data)
-                .attr("fill", "none")
-                .attr("stroke", "steelblue")
-                .attr("stroke-width", 2)
-                .attr("d", line)
+            // tooltip
+            svg
+                .select(".plot")
+                .append("text")
+                .attr("class", `tooltip-${props.id}`)
+                .style("pointer-events", "none")
+                .style("font-size", "10px")
+                .style("font-weight", "bold")
+                .style("opacity", 0) 
 
             // circles
             svg.select(".plot")
@@ -73,10 +74,43 @@ export default function Line(props) {
                 .data(props.data)
                 .enter()
                 .append("circle")
-                .attr("cx", d => x(d.date))
-                .attr("cy", d => y(d.value))
-                .attr("r", 4)
-                .attr("fill", "steelblue")
+                .attr("class", "circle")
+                .attr("cx", d => x(d[props.xkey]))
+                .attr("cy", d => y(d[props.ykey]))
+                .attr("i", (d,i) => i )
+                .attr("r", 5)
+                .attr("fill", props.color)
+                .on("mouseover",function(d) {
+                    // will text hover left or right
+                    let index = d3.select(this).attr("i"); 
+                    let cynum = d3.select(this).attr("cy");
+                    let cxnum = d3.select(this).attr("cx");
+                    let side;
+                    if (index > props.data.length/2) {side = 'left';} else {side = 'right';}
+                    // show and fill in tooltip
+                    d3.select(`text.tooltip-${props.id}`)
+                        .text(() => {
+                            const formatDay = d3.timeFormat("%d");
+                            return formatDay(props.data[index][props.xkey])+": "+props.data[index][props.ykey];
+                        })
+                        .attr("dy", () => {return +cynum-7})
+                        .attr("dx", () => {if (side == "left") {return (+cxnum + 5)} else {return (+cxnum - 5)} })
+                        .attr("text-anchor", () => { if (side == "left") {return "start"} else {return "end"} })
+                        .style("opacity", 1);
+                })
+                .on("mouseout",function(d,i) {
+                    d3.select(`text.tooltip-${props.id}`).style("opacity", 0);
+                })
+
+            // line
+            svg.select(".plot")
+                .append("path")
+                .datum(props.data)
+                .style("pointer-events", "none")
+                .attr("fill", "none")
+                .attr("stroke", props.color)
+                .attr("stroke-width", 2)
+                .attr("d", line)
             
         }, 
         [] //can pass a props here, like props.artist
