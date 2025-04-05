@@ -1,0 +1,23 @@
+[
+    {
+      "category": "Education",
+      "Men": 75,
+      "Women": 85
+    },
+    {
+      "category": "Employment",
+      "Men": 65,
+      "Women": 55
+    },
+    {
+      "category": "Income",
+      "Men": 80,
+      "Women": 70
+    },
+    {
+      "category": "Health",
+      "Men": 60,
+      "Women": 75
+    }
+  ]
+  

@@ -4,6 +4,7 @@ import StackedBar from './Components/StackedBarChart';
 import Scatterplot from './Components/Scatterplot';
 import Line from './Components/LineChart';
 import Bar from './Components/Bar';
+import GroupedBar from './Components/GroupedBar';
 import * as d3 from 'd3';
 
 // DATA
@@ -11,6 +12,7 @@ import scatterplotJSON from './data/dataScatterplot.json';
 import barJSON from './data/dataBarChart.json';
 import stackedbarJSON from './data/dataStackedBarChart.json';
 import lineJSON from './data/dataLineChart.json';
+import groupedbarJSON from './data/dataGroupedBar.json';
 
 // HELPER FUNCTIONS
 // find unique for arr of objects (returns arr of unique items)
@@ -77,7 +79,7 @@ const formattedLineChartData = lineJSON.map(d => {
 // APP COMPONENT
 function App() {
   // BUTTON GROUP
-  const defaultBtnSelected = "option1"
+  const defaultBtnSelected = "option7"
   const [componentSelected, setcomponentSelected] = useState(defaultBtnSelected)
   const btnData = [
     {label: "Scatterplot", key: "option1"},
@@ -85,7 +87,8 @@ function App() {
     {label: "Vertical Bar Chart", key: "option3"},
     {label: "Horizontal Stacked Bar Chart", key: "option4"},
     {label: "Vertical Stacked Bar Chart", key: "option5"},
-    {label: "Line Chart", key: "option6"}
+    {label: "Line Chart", key: "option6"},
+    {label: "Grouped Bar", key: "option7"}
   ]
   const handleBtnSelection = (btnSelectedKey) => {
     setcomponentSelected(btnSelectedKey)
@@ -95,7 +98,6 @@ function App() {
   const formattedStackedBarData = transformDataForBarChart(stackedbarJSON, "category", "value")
   const categoriesforcolor = findUnique(formattedStackedBarData, "Product")
   
-
   return (
     <div className="container">
       <p className={"label"}>Chart type:</p>
@@ -218,6 +220,18 @@ function App() {
             ykey={"value"} 
             xkey={"date"}
             color={"steelblue"}
+          />
+        </div>
+        }
+        {
+        componentSelected === "option7" &&
+        <div className='col-6'>
+          <p>Grouped Bar Chart</p>
+          <GroupedBar
+            data={groupedbarJSON}
+            id={'groupedbar'}
+            height={400} 
+            margin={{ top: 20, right: 30, bottom: 50, left: 50 }} 
           />
         </div>
         }
