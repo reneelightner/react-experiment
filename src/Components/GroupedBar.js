@@ -18,19 +18,19 @@ export default function GroupedBar(props) {
             // x and y scales
             var x0, x1, y
             x0 = d3.scaleBand()
-                    .domain(props.data.map(d => d.category))
-                    .range([0, width])
-                    .padding(0.2)
+                .domain(props.xdomain)
+                .range([0, width])
+                .padding(0.2)
 
             x1 = d3.scaleBand()
-                    .domain(["Men", "Women"])
-                    .range([0, x0.bandwidth()])
-                    .padding(0.05)
+                .domain(props.groupdomain)
+                .range([0, x0.bandwidth()])
+                .padding(0.05)
 
             y = d3.scaleLinear()
-                    .domain([0, d3.max(props.data, d => Math.max(d.Men, d.Women))])
-                    .nice()
-                    .range([height, 0])
+                .domain(props.ydomain)
+                .nice()
+                .range([height, 0])
 
             // x and y axes
             const xAxis = d3.axisBottom(x0)
@@ -61,32 +61,46 @@ export default function GroupedBar(props) {
             const categoryGroups = svg.select(".plot")
                 .selectAll(".category-group")
                 .data(props.data)
-                .enter().append("g")
+                .enter()
+                .append("g")
                 .attr("class", "category-group")
-                .attr("transform", d => `translate(${x0(d.category)},0)`)
+                .attr("transform", d => `translate(${x0(d[props.groupkey])},0)`)
 
+            const color = d3.scaleOrdinal()
+                .domain(props.groupdomain)
+                .range(props.groupcolors)
+                .unknown("#ccc")
+
+            // draw bars
             categoryGroups.selectAll(".bar")
-                .data(d => [
-                    { key: "Men", value: d.Men },
-                    { key: "Women", value: d.Women }
-                ])
-                .enter().append("rect")
+                .data(d => 
+                    props.groupdomain.map(key => ({
+                        key,
+                        value: d[key]
+                    }))
+                )
+                .enter()
+                .append("rect")
                 .attr("x", d => x1(d.key))
                 .attr("y", d => y(d.value))
                 .attr("width", x1.bandwidth())
+                .attr("fill", d => color(d.key))
                 .attr("height", d => height - y(d.value))
 
+            // add text
             categoryGroups.selectAll(".label")
-                .data(d => [
-                    { key: "Men", value: d.Men },
-                    { key: "Women", value: d.Women }
-                ])
+                .data(d => 
+                    props.groupdomain.map(key => ({
+                        key,
+                        value: d[key]
+                    }))
+                )
                 .enter().append("text")
-                .attr("class", "label")
+                .style("font-size", "10px")
                 .attr("x", d => x1(d.key) + x1.bandwidth() / 2)
                 .attr("y", d => y(d.value) - 5)
                 .attr("text-anchor", "middle")
-                .text(d => d.value);
+                .text(d => d.value)
             
         }, 
         [] //can pass a props here, like props.artist

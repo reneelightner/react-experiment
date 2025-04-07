@@ -5,6 +5,7 @@ import Scatterplot from './Components/Scatterplot';
 import Line from './Components/LineChart';
 import Bar from './Components/Bar';
 import GroupedBar from './Components/GroupedBar';
+import colorPalette from './Components/colors';
 import * as d3 from 'd3';
 
 // DATA
@@ -96,7 +97,6 @@ function App() {
 
   // STACKED BAR
   const formattedStackedBarData = transformDataForBarChart(stackedbarJSON, "category", "value")
-  const categoriesforcolor = findUnique(formattedStackedBarData, "Product")
   
   return (
     <div className="container">
@@ -119,7 +119,7 @@ function App() {
               ykey={'AWARD'} 
               xkey={'YEAR'} 
               ttkey={'ARTIST'} 
-              color={"#fc8d59"} />
+              color={colorPalette["Orange"]} />
           </div>
         }
         {
@@ -138,7 +138,7 @@ function App() {
               xdomain={[0, d3.max(barJSON, d => d.sales)]} 
               ykey={'product'} 
               xkey={'sales'} 
-              color={"#fc8d59"}/>
+              color={colorPalette["Orange"]}/>
           </div>
         }
         {
@@ -157,7 +157,7 @@ function App() {
               xdomain={findUnique(barJSON, 'product')} 
               ykey={'sales'} 
               xkey={'product'} 
-              color={"#fc8d59"}/>
+              color={colorPalette["Orange"]}/>
           </div>
         }
         {
@@ -176,7 +176,8 @@ function App() {
               ydomain={findUnique(formattedStackedBarData, "category")} 
               ykey={"category"} 
               xkey={'value'} 
-              categoriescolor={categoriesforcolor} 
+              colordomain={findUnique(formattedStackedBarData, "Product")} 
+              colorrange={[colorPalette["Pink"],colorPalette["Turquoise"],colorPalette["Indigo"]]}
               colorkey={"Product"} 
               stack={'X0'} 
               textpos={'X1'} />
@@ -198,7 +199,8 @@ function App() {
               ydomain={[0, d3.max(formattedStackedBarData, d => d.X1)]} 
               ykey={"value"} 
               xkey={"category"} 
-              categoriescolor={categoriesforcolor} 
+              colordomain={findUnique(formattedStackedBarData, "Product")}
+              colorrange={[colorPalette["Orange"],colorPalette["Turquoise"],colorPalette["Indigo"]]} 
               colorkey={"Product"} 
               stack={'X1'} 
               textpos={'X0'}  />
@@ -219,7 +221,7 @@ function App() {
             ydomain={[0, d3.max(formattedLineChartData, d => d.value)]}
             ykey={"value"} 
             xkey={"date"}
-            color={"steelblue"}
+            color={colorPalette["Teal"]}
           />
         </div>
         }
@@ -232,6 +234,14 @@ function App() {
             id={'groupedbar'}
             height={400} 
             margin={{ top: 20, right: 30, bottom: 50, left: 50 }} 
+            xscale={"band"}
+            xdomain={groupedbarJSON.map(d => d.category)}
+            yscale={"linear"}
+            ydomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+            groupKey={"category"}
+            groupdomain={["Men", "Women"]}
+            groupkey={"category"}
+            groupcolors={[colorPalette["Pink"],colorPalette["Indigo"]]} 
           />
         </div>
         }

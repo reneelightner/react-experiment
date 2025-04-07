@@ -127,7 +127,6 @@ export default function Bar(props) {
                     .data(props.data)
                     .enter()
                     .append("text")
-                    .attr("class","label")
                     .attr("x", d => x(d[props.xkey]) + (x.bandwidth()/2))
                     .attr("y", d => y(d[props.ykey]) - 5)
                     .attr("text-anchor", "middle")

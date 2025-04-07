@@ -83,8 +83,8 @@ function StackedBar(props) {
             }
 
             const color = d3.scaleOrdinal()
-                .domain(props.categoriescolor)
-                .range(d3.schemeSpectral[props.categoriescolor.length])
+                .domain(props.colordomain)
+                .range(props.colorrange)
                 .unknown("#ccc")
 
             // stacked bar chart
@@ -111,6 +111,22 @@ function StackedBar(props) {
                     .attr("fill", d => color(d[props.colorkey]))
             }
 
+            const getTextColor = (hex) => {
+                // Remove hash if present
+                const cleanHex = hex.replace("#", "");
+              
+                // Parse RGB components
+                const r = parseInt(cleanHex.substring(0, 2), 16);
+                const g = parseInt(cleanHex.substring(2, 4), 16);
+                const b = parseInt(cleanHex.substring(4, 6), 16);
+              
+                // Calculate luminance using the WCAG formula
+                const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+              
+                // Return text color based on luminance
+                return luminance > 186 ? "#000000" : "#FFFFFF"; // light bg → black text, dark bg → white text
+            }
+
             // text labels
             if (props.orientation === "horizontal") {
 
@@ -118,12 +134,12 @@ function StackedBar(props) {
                     .data(props.data)
                     .enter()
                     .append("text")
-                    .attr("class","label")
                     .attr("x", d => x(d[props.textpos])-5)
                     .attr("y", d => y(d[props.ykey]))
                     .attr("dy", "2em")
                     .style("font-size", "10px")
                     .attr("text-anchor", "end")
+                    .style("fill", d => getTextColor(color(d[props.colorkey])) )
                     .text(d => d[props.xkey])
 
             } else if (props.orientation === "vertical") {
@@ -137,6 +153,7 @@ function StackedBar(props) {
                     .attr("y", d => y(d[props.stack]) + 10)
                     .style("font-size", "10px")
                     .attr("text-anchor", "middle")
+                    .style("fill", d => getTextColor(color(d[props.colorkey])))
                     .text(d => d[props.ykey])
             }
 
