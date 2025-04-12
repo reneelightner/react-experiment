@@ -16,18 +16,13 @@ export default function Line(props) {
                 .attr("transform", `translate(${margin.left},${margin.top})`)
 
             // x and y axes
-            var x, y
-            if (props.xscale === "time") {
-                x = d3.scaleTime()
-                    .domain(props.xdomain)
-                    .range([0 + 10, width - 10]) // Add padding (10px on both sides)
-            }
+            const x = d3.scaleTime()
+                .domain(props.xdomain)
+                .range([0 + 10, width - 10]) // Add padding (10px on both sides)
 
-            if (props.yscale === "linear") {
-                y = d3.scaleLinear()
-                    .range([height, 0])
-                    .domain(props.ydomain)
-            }
+            const y = d3.scaleLinear()
+                .range([height, 0])
+                .domain(props.ydomain)
 
             // x and y axes
             const xAxis = d3.axisBottom(x)

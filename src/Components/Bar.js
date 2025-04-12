@@ -17,32 +17,27 @@ export default function Bar(props) {
 
             // x and y scales
             var x, y
-            if (props.xscale == "linear") {
+            if (props.orientation === "horizontal") {
 
                 x = d3.scaleLinear()
                     .domain(props.xdomain)
                     .range([0, width])
 
-            } else if (props.xscale == "band") {
+                y = d3.scaleBand()
+                    .domain(props.ydomain)
+                    .rangeRound([0, height])
+                    .padding(0.2)
+
+            } else if (props.orientation === "vertical") {
 
                 x = d3.scaleBand()
                     .domain(props.xdomain)
                     .rangeRound([0, width])
                     .padding(0.2)
-            } 
-
-            if (props.yscale == "linear") {
 
                 y = d3.scaleLinear()
                     .domain(props.ydomain)
                     .range([height, 0])
-
-            } else if (props.yscale == "band") {
-
-                y = d3.scaleBand()
-                    .domain(props.ydomain)
-                    .rangeRound([0, height])
-                    .padding(0.2)
             }  
 
             // x and y axes

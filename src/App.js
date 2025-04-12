@@ -6,6 +6,7 @@ import Line from './Components/LineChart';
 import Bar from './Components/Bar';
 import GroupedBar from './Components/GroupedBar';
 import colorPalette from './Components/colors';
+import Legend from './Components/Legend';
 import * as d3 from 'd3';
 
 // DATA
@@ -89,7 +90,8 @@ function App() {
     {label: "Horizontal Stacked Bar Chart", key: "option4"},
     {label: "Vertical Stacked Bar Chart", key: "option5"},
     {label: "Line Chart", key: "option6"},
-    {label: "Grouped Bar", key: "option7"}
+    {label: "Horizontal Grouped Bar", key: "option7"},
+    {label: "Vertical Grouped Bar", key: "option8"}
   ]
   const handleBtnSelection = (btnSelectedKey) => {
     setcomponentSelected(btnSelectedKey)
@@ -97,11 +99,36 @@ function App() {
 
   // STACKED BAR
   const formattedStackedBarData = transformDataForBarChart(stackedbarJSON, "category", "value")
+
+  // stencil chart
+  const chartOptions = {
+    chart: {
+      type: 'line',
+    },
+    title: {
+      text: 'My Line Chart',
+    },
+    series: [
+      {
+        name: 'Example Series',
+        data: [1, 2, 3, 4, 5],
+      },
+    ],
+  }
   
   return (
     <div className="container">
-      <p className={"label"}>Chart type:</p>
-      <Buttonset btnData={btnData} defaultSelection={defaultBtnSelected} onSelect={handleBtnSelection} /> 
+      <div className="stencil-chart-wrap row">
+        <div className='col-6'>
+          <custom-chart options={chartOptions}></custom-chart>
+        </div>
+      </div>
+      <div className="row">
+        <div className='col-12'>
+          <p className={"label"}>Chart type:</p>
+          <Buttonset btnData={btnData} defaultSelection={defaultBtnSelected} onSelect={handleBtnSelection} /> 
+        </div>
+      </div>
       <div className="componentWrapper row">
         {
         componentSelected === "option1" && 
@@ -132,9 +159,7 @@ function App() {
               height={200}
               margin={{top: 0, right: 25, bottom: 10, left: 70}} 
               orientation={"horizontal"} 
-              yscale={"band"}
               ydomain={findUnique(barJSON, 'product')} 
-              xscale={"linear"} 
               xdomain={[0, d3.max(barJSON, d => d.sales)]} 
               ykey={'product'} 
               xkey={'sales'} 
@@ -151,9 +176,7 @@ function App() {
               height={200}
               margin={{top: 15, right: 5, bottom: 10, left: 20}} 
               orientation={"vertical"} 
-              yscale={"linear"}
               ydomain={[0, d3.max(barJSON, d => d.sales)]}
-              xscale={"band"} 
               xdomain={findUnique(barJSON, 'product')} 
               ykey={'sales'} 
               xkey={'product'} 
@@ -170,9 +193,7 @@ function App() {
               height={200}
               margin={{ top: 5, right: 5, bottom: 10, left: 20 }} 
               orientation={"horizontal"} 
-              xscale={"linear"}
               xdomain={[0, d3.max(formattedStackedBarData, d => d.X1)]} 
-              yscale={"band"}  
               ydomain={findUnique(formattedStackedBarData, "category")} 
               ykey={"category"} 
               xkey={'value'} 
@@ -193,9 +214,7 @@ function App() {
               height={200} 
               margin={{ top: 5, right: 5, bottom: 10, left: 20 }}
               orientation={"vertical"} 
-              xscale={"band"}
               xdomain={findUnique(formattedStackedBarData, "category")}  
-              yscale={"linear"} 
               ydomain={[0, d3.max(formattedStackedBarData, d => d.X1)]} 
               ykey={"value"} 
               xkey={"category"} 
@@ -215,9 +234,7 @@ function App() {
             id={'line'}
             height={200} 
             margin={{ top: 5, right: 5, bottom: 10, left: 15 }} 
-            xscale={"time"}
             xdomain={d3.extent(formattedLineChartData, d => d.date)}
-            yscale={"linear"}
             ydomain={[0, d3.max(formattedLineChartData, d => d.value)]}
             ykey={"value"} 
             xkey={"date"}
@@ -227,19 +244,45 @@ function App() {
         }
         {
         componentSelected === "option7" &&
-        <div className='col-6'>
-          <p>Grouped Bar Chart</p>
+        <div className='col-7'>
+          <p>Grouped Bar Chart Horizontal</p>
+          <Legend items={[
+              { label: "Women", color: colorPalette["Pink"] },
+              { label: "Men", color: colorPalette["Indigo"] }
+          ]} />
           <GroupedBar
             data={groupedbarJSON}
-            id={'groupedbar'}
-            height={400} 
-            margin={{ top: 20, right: 30, bottom: 50, left: 50 }} 
-            xscale={"band"}
-            xdomain={groupedbarJSON.map(d => d.category)}
-            yscale={"linear"}
-            ydomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+            id={'groupedbarvert'}
+            height={300}
+            margin={{ top: 10, right: 20, bottom: 10, left: 70 }}
+            orientation={"horizontal"}
+            xdomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+            ydomain={groupedbarJSON.map(d => d.category)}
             groupKey={"category"}
             groupdomain={["Men", "Women"]}
+            groupkey={"category"}
+            groupcolors={[colorPalette["Indigo"], colorPalette["Pink"]]} 
+          />
+        </div>
+        }
+        {
+        componentSelected === "option8" &&
+        <div className='col-6'>
+          <p>Grouped Bar Chart Vertical</p>
+          <Legend items={[
+              { label: "Women", color: colorPalette["Pink"] },
+              { label: "Men", color: colorPalette["Indigo"] }
+          ]} />
+          <GroupedBar
+            data={groupedbarJSON}
+            id={'groupedbarhoriz'}
+            height={400} 
+            margin={{ top: 10, right: 10, bottom: 30, left: 20 }} 
+            orientation={"vertical"} 
+            xdomain={groupedbarJSON.map(d => d.category)}
+            ydomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+            groupKey={"category"}
+            groupdomain={["Women", "Men"]}
             groupkey={"category"}
             groupcolors={[colorPalette["Pink"],colorPalette["Indigo"]]} 
           />
