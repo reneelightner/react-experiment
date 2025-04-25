@@ -60,6 +60,8 @@ export default function MultipleLine(props) {
                 .attr("fill", "none")
                 .attr("stroke", (d, i) => props.colors[i])
                 .attr("stroke-width", 2)
+                .transition()
+                .duration(800)
                 .attr("d", (ykey) => {
                     const line = d3.line()
                         .x(d => x(d[props.xkey]))
@@ -74,35 +76,46 @@ export default function MultipleLine(props) {
                 svg.select(".plot")
                     .selectAll(`circle.circle-${ykey}`)
                     .data(props.data)
-                    .join("circle")
-                    .attr("class", `circle-${ykey}`)
-                    .attr("cx", d => x(d[props.xkey]))
-                    .attr("cy", d => y(d[ykey]))
-                    .attr("i", (d,i) => i )
-                    .attr("r", 5)
-                    .attr("fill", props.colors[i])
-                    .on("mouseover",function(d) {
-                        // will text hover left or right
-                        let index = d3.select(this).attr("i"); 
-                        let cynum = d3.select(this).attr("cy");
-                        let cxnum = d3.select(this).attr("cx");
-                        let side;
-                        if (index > props.data.length/2) {side = 'left';} else {side = 'right';}
-                        // show and fill in tooltip
-                        d3.select(`text.tooltip-${props.id}`)
-                            .text(() => {
-                                const formatDay = d3.timeFormat("%b %e");
-                                return formatDay(props.data[index][props.xkey])+": "+props.data[index][ykey];
-                            })
-                            .attr("dy", () => {return +cynum-7})
-                            .attr("dx", () => {if (side == "left") {return (+cxnum + 5)} else {return (+cxnum - 5)} })
-                            .attr("text-anchor", () => { if (side == "left") {return "start"} else {return "end"} })
-                            .style("opacity", 1);
-                    })
-                    .on("mouseout",function(d,i) {
-                        d3.select(`text.tooltip-${props.id}`).style("opacity", 0);
-                    })
-
+                    .join(
+                        (enter) => {
+                            // to prevent fly-in from corner on enter, set the circles including their cx and cy before the transition
+                            // enter represents new elements that are being added to the DOM
+                            return enter
+                                .append("circle")
+                                .attr("class", `circle-${ykey}`)
+                                .attr("i", (d, i) => i)
+                                .attr("r", 5)
+                                .attr("fill", props.colors[i])
+                                .attr("cx", d => x(d[props.xkey]))
+                                .attr("cy", d => y(d[ykey]))
+                        },
+                        (update) => {
+                            // update represents existing elements that are already in the DOM and are now being re-bound to new data
+                            return update
+                                .on("mouseover", function () {
+                                    let index = d3.select(this).attr("i");
+                                    let cynum = d3.select(this).attr("cy");
+                                    let cxnum = d3.select(this).attr("cx");
+                                    let side = index > props.data.length / 2 ? 'left' : 'right';
+                                    d3.select(`text.tooltip-${props.id}`)
+                                        .text(() => {
+                                            const formatDay = d3.timeFormat("%b %e");
+                                            return formatDay(props.data[index][props.xkey]) + ": " + props.data[index][ykey];
+                                        })
+                                        .attr("dy", +cynum - 7)
+                                        .attr("dx", side === "left" ? +cxnum + 5 : +cxnum - 5)
+                                        .attr("text-anchor", side === "left" ? "start" : "end")
+                                        .style("opacity", 1);
+                                })
+                                .on("mouseout", function () {
+                                    d3.select(`text.tooltip-${props.id}`).style("opacity", 0);
+                                })
+                                .transition()
+                                .duration(800)
+                                .attr("cx", d => x(d[props.xkey]))
+                                .attr("cy", d => y(d[ykey]))
+                        }
+                    )
             })
 
             // tooltip
@@ -116,7 +129,7 @@ export default function MultipleLine(props) {
                 .style("font-weight", "bold")
                 .style("opacity", 0)
         }, 
-        [] //can pass a props here, like props.artist
+        [props.data] //will update when props.data changes
     );
 
     return (

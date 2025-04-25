@@ -20,6 +20,7 @@ import stackedbarJSON from '../data/dataStackedBarChart.json'
 import lineJSON from '../data/dataLineChart.json'
 import groupedbarJSON from '../data/dataGroupedBar.json'
 import multiplelinesJSON from '../data/dataMultipleLines.json'
+import multiplelines2JSON from '../data/dataMultipleLines2.json'
 
 // HELPER FUNCTIONS
 // find unique for arr of objects (returns arr of unique items)
@@ -75,44 +76,58 @@ const formattedScatterplotData = scatterplotJSON.map(d => {
     return newObj
 })
 
-// for line chart
+// for line charts - format dates to date objects
 const parseDate = d3.timeParse("%Y-%m-%d")
-const formattedLineChartData = lineJSON.map(d => {
-    const newObj = {...d} // shallow copy to avoid modifying the original object
-    newObj.date = parseDate(d.date) // Convert string to actual Date object
-    return newObj
-})
-
-//for multiple line chart
-const formattedMultipleLineChartData = multiplelinesJSON.map(d => {
-    const newObj = {...d} // shallow copy to avoid modifying the original object
-    newObj.date = parseDate(d.date) // Convert string to actual Date object
-    return newObj
-})
+function formatDates(jsondata) {
+    return jsondata.map(d => {
+        const newObj = {...d} // shallow copy to avoid modifying the original object
+        newObj.date = parseDate(d.date) // Convert string to actual Date object
+        return newObj
+    })
+}
+// for single line chart
+const formattedLineChartData = formatDates(lineJSON)
+// for multiple lines chart
+const formattedMultipleLineChartData = formatDates(multiplelinesJSON)
+const formattedMultipleLine2ChartData = formatDates(multiplelines2JSON)
 
 // STACKED BAR
 const formattedStackedBarData = transformDataForBarChart(stackedbarJSON, "category", "value")
 
 const D3Charts = () => {
 
-  // BUTTON GROUP FOR D3 CHARTS
-  const [componentSelectedD3, setcomponentSelectedD3] = useState("option9")
-  const btnsD3Charts = [
-    {label: "Scatterplot", key: "option1"},
-    {label: "Horizontal Bar", key: "option2"},
-    {label: "Vertical Bar", key: "option3"},
-    {label: "Horizontal Stacked Bar", key: "option4"},
-    {label: "Vertical Stacked Bar", key: "option5"},
-    {label: "Line", key: "option6"},
-    {label: "Horizontal Grouped Bar", key: "option7"},
-    {label: "Vertical Grouped Bar", key: "option8"},
-    {label: "Multiple Line", key: "option9"}
-  ]
-  const handleBtnSelectionD3Charts = (btnSelectedKey) => {
-    setcomponentSelectedD3(btnSelectedKey)
-  }
+    // BUTTON GROUP FOR D3 CHARTS
+    const [componentSelectedD3, setcomponentSelectedD3] = useState("option9")
+    const btnsD3Charts = [
+        {label: "Scatterplot", key: "option1"},
+        {label: "Horizontal Bar", key: "option2"},
+        {label: "Vertical Bar", key: "option3"},
+        {label: "Horizontal Stacked Bar", key: "option4"},
+        {label: "Vertical Stacked Bar", key: "option5"},
+        {label: "Line", key: "option6"},
+        {label: "Horizontal Grouped Bar", key: "option7"},
+        {label: "Vertical Grouped Bar", key: "option8"},
+        {label: "Multiple Line", key: "option9"}
+    ]
+    const handleBtnSelectionD3Charts = (btnSelectedKey) => {
+        setcomponentSelectedD3(btnSelectedKey)
+    }
 
-  return (
+    // button group for multiple lines chart
+    const [dataSelected, setDataSelected] = useState("data1")
+    const btnsMultipleLinesCharts = [
+        {label: "Data1", key: "data1"},
+        {label: "Data2", key: "data2"}
+    ]
+    const handleDataSelecteed = (dataSelected) => {
+        setDataSelected(dataSelected)
+    }
+    // data for multiple lines chart
+    const chartDataMultipleLines = dataSelected === "data1"  // this is passed as the data to the chart component
+        ? formattedMultipleLineChartData 
+        : formattedMultipleLine2ChartData
+
+    return (
     <>
         <h3 className="pt-3">d3 charts</h3>
         <div className="row">
@@ -284,8 +299,9 @@ const D3Charts = () => {
         componentSelectedD3 === "option9" &&
         <div className='col-6'>
             <p>Multiple Lines Chart</p>
+            <Buttonset btnData={btnsMultipleLinesCharts} selection={dataSelected} onSelect={handleDataSelecteed} />
             <MultipleLine
-            data={formattedMultipleLineChartData}
+            data={chartDataMultipleLines}
             id={'multipleline'}
             height={350} 
             margin={{ top: 10, right: 10, bottom: 20, left: 20 }} 
@@ -299,7 +315,7 @@ const D3Charts = () => {
         }
         </div>
     </>
-  )
+    )
 }
 
 export default D3Charts
