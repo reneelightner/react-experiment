@@ -1,0 +1,12 @@
+[
+  { "date": "2024-01-01", "value1": 10, "value2": 12, "value3": 8 },
+  { "date": "2024-01-02", "value1": 15, "value2": 18, "value3": 13 },
+  { "date": "2024-01-03", "value1": 8,  "value2": 9,  "value3": 7 },
+  { "date": "2024-01-04", "value1": 20, "value2": 22, "value3": 18 },
+  { "date": "2024-01-05", "value1": 18, "value2": 19, "value3": 16 },
+  { "date": "2024-01-06", "value1": 25, "value2": 27, "value3": 23 },
+  { "date": "2024-01-07", "value1": 30, "value2": 33, "value3": 28 },
+  { "date": "2024-01-08", "value1": 28, "value2": 30, "value3": 26 },
+  { "date": "2024-01-09", "value1": 35, "value2": 37, "value3": 32 },
+  { "date": "2024-01-10", "value1": 40, "value2": 42, "value3": 38 }
+]

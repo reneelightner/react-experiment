@@ -55,6 +55,9 @@ export default function Scatterplot(props) {
             // vertical x axis ticks have dash
             svg.selectAll("g.x-axis g.tick line").style("stroke-dasharray", "5 5").style("stroke", "#ccc")
 
+            // remove existing text tooltips before drawing new ones
+            svg.select(".plot").selectAll(`text.tooltip-${props.id}`).remove()
+
             // tooltip
             svg
                 .select(".plot")

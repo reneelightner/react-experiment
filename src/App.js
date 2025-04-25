@@ -87,55 +87,9 @@ function App() {
   const handleBtnSelection = (btnSelectedKey) => {
     setcomponentSelectedChart(btnSelectedKey)
   }
-
-  const fullData = [
-    { id: 1, name: "Bruno Mars", award: 'A' },
-    { id: 2, name: "Olivia Rodrigo", award: 'B' },
-    { id: 3, name: "Jon Batiste", award: 'C' },
-    { id: 4, name: "Anderson .Paak", award: 'A' },
-    { id: 5, name: "Anderson .Paak", award: 'B' },
-    { id: 6, name: "Anderson .Paak", award: 'C' }
-  ]
-
-  const [testData, setTestData] = useState(fullData)
-  //no selections on default
-  const [artistSelections, setArtistSelections] = useState([])
-  const [awardSelections, setAwardSelections] = useState([])
-  
-  function filterArray(filterArray1, filterArray2) {
-    if (!filterArray1.length && !filterArray2.length) {
-      return testData
-    }
-  
-    return testData.filter(item => {
-      const condition1 = filterArray1.length === 0 || filterArray1.includes(item.name);
-      const condition2 = filterArray2.length === 0 || filterArray2.includes(item.award);
-      return condition1 && condition2;
-    });
-  }
-
-  const filteredData = filterArray(artistSelections, awardSelections)
-
-  const uniqueartists = filteredData.reduce((a,c) => {
-    if (!a.includes(c.name)) {
-      a.push(c.name)
-    } 
-    return a
-  }, [])
-
-  const uniqueawards = filteredData.reduce((a,c) => {
-    if (!a.includes(c.award)) {
-      a.push(c.award)
-    } 
-    return a
-  }, [])
-
  
   return (
     <div className="container">
-      <button onClick={() => {setArtistSelections([]); setAwardSelections([])}}>Reset</button>
-      <Test selections={uniqueartists} setSelections={setArtistSelections}/>
-      <Test selections={uniqueawards} setSelections={setAwardSelections}/>
       <div className="row">
         <div className='col-12'>
           <Buttonset btnData={btnsAllCharts} selection={componentSelectedChart} onSelect={handleBtnSelection} />

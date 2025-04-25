@@ -26,7 +26,7 @@ export default function Line(props) {
 
             // x and y axes
             const xAxis = d3.axisBottom(x)
-                .tickFormat(d3.timeFormat("%d"))
+                .tickFormat(d3.timeFormat("%b %e"))
                 .tickSize(-height)
 
             const yAxis = d3.axisLeft(y)
@@ -53,15 +53,19 @@ export default function Line(props) {
                 .x(d => x(d[props.xkey]))
                 .y(d => y(d[props.ykey]))
 
-            // tooltip
-            svg
-                .select(".plot")
-                .append("text")
-                .attr("class", `tooltip-${props.id}`)
-                .style("pointer-events", "none")
-                .style("font-size", "10px")
-                .style("font-weight", "bold")
-                .style("opacity", 0) 
+            // remove existing paths and text tooltips before drawing new ones
+            svg.select(".plot").selectAll(`path.path-${props.id}`).remove()
+            svg.select(".plot").selectAll(`text.tooltip-${props.id}`).remove()
+
+            // line
+            svg.select(".plot")
+                .append("path")
+                .attr("class", `path-${props.id}`)
+                .datum(props.data)
+                .attr("fill", "none")
+                .attr("stroke", props.color)
+                .attr("stroke-width", 2)
+                .attr("d", line)
 
             // circles
             svg.select(".plot")
@@ -85,7 +89,7 @@ export default function Line(props) {
                     // show and fill in tooltip
                     d3.select(`text.tooltip-${props.id}`)
                         .text(() => {
-                            const formatDay = d3.timeFormat("%d");
+                            const formatDay = d3.timeFormat("%b %e");
                             return formatDay(props.data[index][props.xkey])+": "+props.data[index][props.ykey];
                         })
                         .attr("dy", () => {return +cynum-7})
@@ -97,15 +101,15 @@ export default function Line(props) {
                     d3.select(`text.tooltip-${props.id}`).style("opacity", 0);
                 })
 
-            // line
-            svg.select(".plot")
-                .append("path")
-                .datum(props.data)
+            // tooltip
+            svg
+                .select(".plot")
+                .append("text")
+                .attr("class", `tooltip-${props.id}`)
                 .style("pointer-events", "none")
-                .attr("fill", "none")
-                .attr("stroke", props.color)
-                .attr("stroke-width", 2)
-                .attr("d", line)
+                .style("font-size", "10px")
+                .style("font-weight", "bold")
+                .style("opacity", 0) 
             
         }, 
         [] //can pass a props here, like props.artist

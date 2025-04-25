@@ -7,6 +7,7 @@ import Scatterplot from './Scatterplot';
 import Line from './LineChart';
 import Bar from './Bar';
 import GroupedBar from './GroupedBar';
+import MultipleLine from './MultipleLine';
 import colorPalette from './colors';
 import Legend from './Legend';
 
@@ -18,6 +19,7 @@ import barJSON from '../data/dataBarChart.json'
 import stackedbarJSON from '../data/dataStackedBarChart.json'
 import lineJSON from '../data/dataLineChart.json'
 import groupedbarJSON from '../data/dataGroupedBar.json'
+import multiplelinesJSON from '../data/dataMultipleLines.json'
 
 // HELPER FUNCTIONS
 // find unique for arr of objects (returns arr of unique items)
@@ -76,9 +78,16 @@ const formattedScatterplotData = scatterplotJSON.map(d => {
 // for line chart
 const parseDate = d3.timeParse("%Y-%m-%d")
 const formattedLineChartData = lineJSON.map(d => {
-const newObj = {...d} // shallow copy to avoid modifying the original object
-newObj.date = parseDate(d.date) // Convert string to actual Date object
-return newObj
+    const newObj = {...d} // shallow copy to avoid modifying the original object
+    newObj.date = parseDate(d.date) // Convert string to actual Date object
+    return newObj
+})
+
+//for multiple line chart
+const formattedMultipleLineChartData = multiplelinesJSON.map(d => {
+    const newObj = {...d} // shallow copy to avoid modifying the original object
+    newObj.date = parseDate(d.date) // Convert string to actual Date object
+    return newObj
 })
 
 // STACKED BAR
@@ -87,16 +96,17 @@ const formattedStackedBarData = transformDataForBarChart(stackedbarJSON, "catego
 const D3Charts = () => {
 
   // BUTTON GROUP FOR D3 CHARTS
-  const [componentSelectedD3, setcomponentSelectedD3] = useState("option1")
+  const [componentSelectedD3, setcomponentSelectedD3] = useState("option9")
   const btnsD3Charts = [
     {label: "Scatterplot", key: "option1"},
-    {label: "Horizontal Bar Chart", key: "option2"},
-    {label: "Vertical Bar Chart", key: "option3"},
-    {label: "Horizontal Stacked Bar Chart", key: "option4"},
-    {label: "Vertical Stacked Bar Chart", key: "option5"},
-    {label: "Line Chart", key: "option6"},
+    {label: "Horizontal Bar", key: "option2"},
+    {label: "Vertical Bar", key: "option3"},
+    {label: "Horizontal Stacked Bar", key: "option4"},
+    {label: "Vertical Stacked Bar", key: "option5"},
+    {label: "Line", key: "option6"},
     {label: "Horizontal Grouped Bar", key: "option7"},
-    {label: "Vertical Grouped Bar", key: "option8"}
+    {label: "Vertical Grouped Bar", key: "option8"},
+    {label: "Multiple Line", key: "option9"}
   ]
   const handleBtnSelectionD3Charts = (btnSelectedKey) => {
     setcomponentSelectedD3(btnSelectedKey)
@@ -267,6 +277,23 @@ const D3Charts = () => {
             groupdomain={["Women", "Men"]}
             groupkey={"category"}
             groupcolors={[colorPalette["Pink"],colorPalette["Indigo"]]} 
+            />
+        </div>
+        }
+        {
+        componentSelectedD3 === "option9" &&
+        <div className='col-6'>
+            <p>Multiple Lines Chart</p>
+            <MultipleLine
+            data={formattedMultipleLineChartData}
+            id={'multipleline'}
+            height={350} 
+            margin={{ top: 10, right: 10, bottom: 20, left: 20 }} 
+            xdomain={d3.extent(formattedMultipleLineChartData, d => d.date)}
+            ydomain={[0, d3.max(formattedMultipleLineChartData, d => Math.max(d.value1, d.value2, d.value3))]}
+            ykeys={["value1","value2","value3"]} 
+            xkey={"date"}
+            colors={[colorPalette["Teal"],colorPalette["Green"],colorPalette["Purple"]]}
             />
         </div>
         }
