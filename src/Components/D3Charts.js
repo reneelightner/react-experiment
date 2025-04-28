@@ -10,6 +10,7 @@ import GroupedBar from './GroupedBar';
 import MultipleLine from './MultipleLine';
 import colorPalette from './colors';
 import Legend from './Legend';
+import Dropdown from './Dropdown';
 
 import * as d3 from 'd3';
 
@@ -113,6 +114,7 @@ const D3Charts = () => {
         setcomponentSelectedD3(btnSelectedKey)
     }
 
+    // Multiple Lines Chart
     // button group for multiple lines chart
     const [dataSelected, setDataSelected] = useState("data1")
     const btnsMultipleLinesCharts = [
@@ -126,25 +128,72 @@ const D3Charts = () => {
     const chartDataMultipleLines = dataSelected === "data1"  // this is passed as the data to the chart component
         ? formattedMultipleLineChartData 
         : formattedMultipleLine2ChartData
+    // x domain for multiple lines chart
+    const xdomain = dataSelected === "data1"
+        ? d3.extent(formattedMultipleLineChartData, d => d.date)
+        : d3.extent(formattedMultipleLine2ChartData, d => d.date)
+    // y domain for multiple lines chart
+    const ydomainmax = dataSelected === "data1"
+        ? d3.max(formattedMultipleLineChartData, d => Math.max(d.value1, d.value2, d.value3))
+        : d3.max(formattedMultipleLine2ChartData, d => Math.max(d.value1, d.value2, d.value3))
+    // for multiple lines dropdown -items selected and way to update items selected
+    const [itemsSelected, setItemsSelected] = useState(["value1", "value2", "value3"])
+    const handleDDSelected = (itemSelected) => {
+        let currItemsSelected = [...itemsSelected]
+        if (currItemsSelected.includes(itemSelected)) {
+            currItemsSelected = currItemsSelected.filter((d) => {return d != itemSelected})
+        } else {
+            currItemsSelected.push(itemSelected)
+        }
+        setItemsSelected(currItemsSelected)
+    }
+    // line/legend color lookup
+    const multipleLineLookup = {
+        "Value 1": colorPalette["Lime"],
+        "Value 2": colorPalette["Green"],
+        "Value 3": colorPalette["Purple"]
+    }
+    // key lookup 
+    const keyLookup = {
+        "value1" : "Value 1",
+        "value2" : "Value 2",
+        "value3" : "Value 3"
+    }
+    // legend items - built on items selected from the dropdown
+    let legendItems = itemsSelected.map((key) => {
+        return { label: keyLookup[key], color: multipleLineLookup[keyLookup[key]] }
+    })
+    // filtered data based on items selected from dropdown
+    let filteredMultipleLinesData = chartDataMultipleLines.map((d) => {
+        const newObj = {date: d.date}
+        itemsSelected.forEach((item) => {
+            newObj[item] = d[item]
+        })
+        return newObj
+    })
+    // colors based on items selected from dropdown
+    let colorsForItems = itemsSelected.map((d) => {
+        return multipleLineLookup[keyLookup[d]]
+    })
 
     return (
     <>
         <h3 className="pt-3">d3 charts</h3>
         <div className="row">
-        <div className='col-12'>
-            <p className='label'>Chart type:</p>
-            <Buttonset btnData={btnsD3Charts} selection={componentSelectedD3} onSelect={handleBtnSelectionD3Charts} /> 
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
+                <p className='label'>Chart type:</p>
+                <Buttonset btnData={btnsD3Charts} selection={componentSelectedD3} onSelect={handleBtnSelectionD3Charts} /> 
+            </div>
         </div>
-        </div>
-        <div className="componentWrapper row">
+        <div className="row">
         {
         componentSelectedD3 === "option1" && 
-            <div className='col-10'>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
             <p>Scatterplot</p>
             <Scatterplot 
                 data={formattedScatterplotData} 
                 id={'scatterplot'} 
-                height={200} 
+                height={350} 
                 margin={{top: 0, right: 5, bottom: 20, left: 20}} 
                 yscale={'band'}
                 ydomain={findUnique(formattedScatterplotData, 'AWARD')} 
@@ -158,12 +207,12 @@ const D3Charts = () => {
         }
         {
         componentSelectedD3 === "option2" && 
-            <div className='col-6'>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
             <p>Horizontal Bar Chart</p>
             <Bar 
                 data={barJSON} 
                 id={'horizontalbar'}
-                height={200}
+                height={350}
                 margin={{top: 0, right: 25, bottom: 10, left: 70}} 
                 orientation={"horizontal"} 
                 ydomain={findUnique(barJSON, 'product')} 
@@ -175,12 +224,12 @@ const D3Charts = () => {
         }
         {
         componentSelectedD3 === "option3" && 
-            <div className='col-6'>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
             <p>Vertical Bar Chart</p>
             <Bar 
                 data={barJSON} 
                 id={'verticalbar'} 
-                height={200}
+                height={350}
                 margin={{top: 15, right: 5, bottom: 10, left: 20}} 
                 orientation={"vertical"} 
                 ydomain={[0, d3.max(barJSON, d => d.sales)]}
@@ -192,12 +241,12 @@ const D3Charts = () => {
         }
         {
         componentSelectedD3 === "option4" && 
-            <div className='col-6'>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
             <p>Horizontal Stacked Bar Chart</p>
             <StackedBar 
                 data={formattedStackedBarData} 
                 id={'stackedbarhoriz'}
-                height={200}
+                height={350}
                 margin={{ top: 5, right: 5, bottom: 10, left: 20 }} 
                 orientation={"horizontal"} 
                 xdomain={[0, d3.max(formattedStackedBarData, d => d.X1)]} 
@@ -213,12 +262,12 @@ const D3Charts = () => {
         }
         {
         componentSelectedD3 === "option5" && 
-            <div className='col-6'>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
             <p>Vertical Stacked Bar Chart</p>
             <StackedBar 
                 data={formattedStackedBarData} 
                 id={'stackedbarvert'}
-                height={200} 
+                height={350} 
                 margin={{ top: 5, right: 5, bottom: 10, left: 20 }}
                 orientation={"vertical"} 
                 xdomain={findUnique(formattedStackedBarData, "category")}  
@@ -234,84 +283,90 @@ const D3Charts = () => {
         }
         {
         componentSelectedD3 === "option6" &&
-        <div className='col-6'>
-            <p>Line Chart</p>
-            <Line 
-            data={formattedLineChartData}
-            id={'line'}
-            height={200} 
-            margin={{ top: 5, right: 5, bottom: 10, left: 15 }} 
-            xdomain={d3.extent(formattedLineChartData, d => d.date)}
-            ydomain={[0, d3.max(formattedLineChartData, d => d.value)]}
-            ykey={"value"} 
-            xkey={"date"}
-            color={colorPalette["Teal"]}
-            />
-        </div>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
+                <p>Line Chart</p>
+                <Line 
+                data={formattedLineChartData}
+                id={'line'}
+                height={350} 
+                margin={{ top: 5, right: 5, bottom: 10, left: 15 }} 
+                xdomain={d3.extent(formattedLineChartData, d => d.date)}
+                ydomain={[0, d3.max(formattedLineChartData, d => d.value)]}
+                ykey={"value"} 
+                xkey={"date"}
+                color={colorPalette["Teal"]}
+                />
+            </div>
         }
         {
         componentSelectedD3 === "option7" &&
-        <div className='col-7'>
-            <p>Grouped Bar Chart Horizontal</p>
-            <Legend items={[
-                { label: "Women", color: colorPalette["Pink"] },
-                { label: "Men", color: colorPalette["Indigo"] }
-            ]} />
-            <GroupedBar
-            data={groupedbarJSON}
-            id={'groupedbarvert'}
-            height={300}
-            margin={{ top: 10, right: 20, bottom: 10, left: 70 }}
-            orientation={"horizontal"}
-            xdomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
-            ydomain={groupedbarJSON.map(d => d.category)}
-            groupKey={"category"}
-            groupdomain={["Men", "Women"]}
-            groupkey={"category"}
-            groupcolors={[colorPalette["Indigo"], colorPalette["Pink"]]} 
-            />
-        </div>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
+                <p>Grouped Bar Chart Horizontal</p>
+                <Legend items={[
+                    { label: "Women", color: colorPalette["Pink"] },
+                    { label: "Men", color: colorPalette["Indigo"] }
+                ]} />
+                <GroupedBar
+                data={groupedbarJSON}
+                id={'groupedbarvert'}
+                height={350}
+                margin={{ top: 10, right: 20, bottom: 10, left: 70 }}
+                orientation={"horizontal"}
+                xdomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+                ydomain={groupedbarJSON.map(d => d.category)}
+                groupKey={"category"}
+                groupdomain={["Men", "Women"]}
+                groupkey={"category"}
+                groupcolors={[colorPalette["Indigo"], colorPalette["Pink"]]} 
+                />
+            </div>
         }
         {
         componentSelectedD3 === "option8" &&
-        <div className='col-6'>
-            <p>Grouped Bar Chart Vertical</p>
-            <Legend items={[
-                { label: "Women", color: colorPalette["Pink"] },
-                { label: "Men", color: colorPalette["Indigo"] }
-            ]} />
-            <GroupedBar
-            data={groupedbarJSON}
-            id={'groupedbarhoriz'}
-            height={400} 
-            margin={{ top: 10, right: 10, bottom: 30, left: 20 }} 
-            orientation={"vertical"} 
-            xdomain={groupedbarJSON.map(d => d.category)}
-            ydomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
-            groupKey={"category"}
-            groupdomain={["Women", "Men"]}
-            groupkey={"category"}
-            groupcolors={[colorPalette["Pink"],colorPalette["Indigo"]]} 
-            />
-        </div>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
+                <p>Grouped Bar Chart Vertical</p>
+                <Legend items={[
+                    { label: "Women", color: colorPalette["Pink"] },
+                    { label: "Men", color: colorPalette["Indigo"] }
+                ]} />
+                <GroupedBar
+                data={groupedbarJSON}
+                id={'groupedbarhoriz'}
+                height={350} 
+                margin={{ top: 10, right: 10, bottom: 30, left: 20 }} 
+                orientation={"vertical"} 
+                xdomain={groupedbarJSON.map(d => d.category)}
+                ydomain={[0, d3.max(groupedbarJSON, d => Math.max(d.Men, d.Women))]}
+                groupKey={"category"}
+                groupdomain={["Women", "Men"]}
+                groupkey={"category"}
+                groupcolors={[colorPalette["Pink"],colorPalette["Indigo"]]} 
+                />
+            </div>
         }
         {
         componentSelectedD3 === "option9" &&
-        <div className='col-6'>
-            <p>Multiple Lines Chart</p>
-            <Buttonset btnData={btnsMultipleLinesCharts} selection={dataSelected} onSelect={handleDataSelecteed} />
-            <MultipleLine
-            data={chartDataMultipleLines}
-            id={'multipleline'}
-            height={350} 
-            margin={{ top: 10, right: 10, bottom: 20, left: 20 }} 
-            xdomain={d3.extent(formattedMultipleLineChartData, d => d.date)}
-            ydomain={[0, d3.max(formattedMultipleLineChartData, d => Math.max(d.value1, d.value2, d.value3))]}
-            ykeys={["value1","value2","value3"]} 
-            xkey={"date"}
-            colors={[colorPalette["Teal"],colorPalette["Green"],colorPalette["Purple"]]}
-            />
-        </div>
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
+                <p>Multiple Lines Chart</p>
+                <Buttonset btnData={btnsMultipleLinesCharts} selection={dataSelected} onSelect={handleDataSelecteed} />
+                <Legend items={legendItems} />
+                <Dropdown items={[
+                    { label: "Value 1", key: "value1" },
+                    { label: "Value 2", key: "value2" },
+                    { label: "Value 3", key: "value3" }
+                ]} selectedItems={itemsSelected} onSelect={handleDDSelected}/>
+                <MultipleLine
+                data={filteredMultipleLinesData}
+                id={'multipleline'}
+                height={350} 
+                margin={{ top: 10, right: 10, bottom: 20, left: 20 }} 
+                xdomain={xdomain}
+                ydomain={[0, ydomainmax]}
+                ykeys={itemsSelected} 
+                xkey={"date"}
+                colors={colorsForItems}
+                />
+            </div>
         }
         </div>
     </>

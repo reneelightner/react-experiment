@@ -73,8 +73,6 @@ const chartScatterplot = {
 }
 
 
-
-
 // APP COMPONENT
 function App() {
 
@@ -91,7 +89,7 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className='col-12'>
+        <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12'>
           <Buttonset btnData={btnsAllCharts} selection={componentSelectedChart} onSelect={handleBtnSelection} />
         </div>
       </div>
